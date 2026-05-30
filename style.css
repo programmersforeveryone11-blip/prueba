@@ -1,0 +1,33 @@
+* { font-family: 'Roboto', sans-serif; }
+
+.chrome-header { background-color: #dee1e6; }
+
+.tab-item {
+    display: flex; align-items: center; height: 32px; padding: 0 12px;
+    font-size: 12px; color: #5f6368; width: 190px; position: relative;
+    cursor: pointer; border-radius: 8px 8px 0 0; transition: 0.2s;
+}
+
+.tab-active { background-color: #ffffff; color: #3c4043; border: 1px solid #ccc; border-bottom: none; }
+.tab-inactive:hover { background-color: rgba(255,255,255,0.5); }
+
+.chrome-address-bar { background-color: #f1f3f4; }
+.chrome-address-bar:focus-within { background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+
+.search-container-style:hover, .search-container-style:focus-within {
+    box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+    border-color: transparent;
+}
+
+.brand-gradient {
+    background: linear-gradient(to right, #4285F4 0%, #EA4335 20%, #FBBC05 40%, #4285F4 60%, #34A853 80%, #EA4335 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+#portfolio-view { display: none; }
+#portfolio-view.active { display: block; }
+
+#voice-btn { transition: background-color 0.2s; }
