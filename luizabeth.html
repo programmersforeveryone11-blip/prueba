@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luizabeth - Buscar con Google</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for sharp typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Google+Sans:wght@400;500;700&family=Paytone+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #202124;
+        }
+        
+        /* Premium custom gradient for "Luizabeth" logo matching Google's color cycle */
+        .logo-luizabeth {
+            font-family: 'Google Sans', 'Roboto', sans-serif;
+            background: linear-gradient(
+                to right, 
+                #4285F4 0%, /* Blue */
+                #EA4335 20%, /* Red */
+                #FBBC05 40%, /* Yellow */
+                #4285F4 60%, /* Blue */
+                #34A853 80%, /* Green */
+                #EA4335 100% /* Red */
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        /* Custom Google Colors */
+        .google-blue { color: #1a0dab; }
+        .google-blue-hover:hover { text-decoration: underline; color: #150c84; }
+        .google-dark-gray { color: #4d5156; }
+        .google-light-gray { color: #70757a; }
+        
+        /* Custom scrollbar hiding */
+        .scrollbar-none::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-none {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Search Box Focus/Hover State */
+        .search-box-container {
+            box-shadow: 0 1px 6px rgba(32,33,36,0.08);
+            border: 1px solid #dfe1e5;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+        .search-box-container:hover, .search-box-container:focus-within {
+            box-shadow: 0 1px 6px rgba(32,33,36,0.20);
+            border-color: rgba(223,225,229,0);
+            background-color: #ffffff;
+        }
+
+        /* CSS-only Pastel Checkerboard Background (Fondo Ajedrez Rosa y Amarillo - sjdjdj.png) */
+        .bg-checkerboard {
+            background-color: #fff9db; /* Amarillo pastel */
+            background-image: 
+                linear-gradient(45deg, #fcc2fc 25%, transparent 25%, transparent 75%, #fcc2fc 75%, #fcc2fc), 
+                linear-gradient(45deg, #fcc2fc 25%, transparent 25%, transparent 75%, #fcc2fc 75%, #fcc2fc);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            opacity: 0.85;
+        }
+
+        /* CSS-only Pastel Star Pattern Background (Fondo de estrellas amarillas sobre fondo rosa pastel - dhhfjd.png) */
+        .bg-stars-pink {
+            background-color: #df6d91; /* Rosa base similar a la imagen */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='100' viewBox='0 0 80 100'%3E%3Cg fill='%23fff39a'%3E%3Cpath d='M20 15 L23 22 L31 23 L25 28 L27 36 L20 32 L13 36 L15 28 L9 23 L17 22 Z M60 55 L63 62 L71 63 L65 68 L67 76 L60 72 L53 76 L55 68 L49 63 L57 62 Z M20 65 L22 69 L27 70 L23 73 L24 78 L20 75 L16 78 L17 73 L13 70 L18 69 Z M60 15 L62 19 L67 20 L63 23 L64 28 L60 25 L56 28 L57 23 L53 20 L58 19 Z'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 80px 100px;
+        }
+
+        /* CSS-only Tinkerbell Green Starry Background (Verde Tinkerbell con estrellas oliva) */
+        .bg-stars-green {
+            background-color: #b0cb4c; /* Verde Tinkerbell base */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='100' viewBox='0 0 80 100'%3E%3Cg fill='%238ca433'%3E%3Cpath d='M20 15 L23 22 L31 23 L25 28 L27 36 L20 32 L13 36 L15 28 L9 23 L17 22 Z M60 55 L63 62 L71 63 L65 68 L67 76 L60 72 L53 76 L55 68 L49 63 L57 62 Z M20 65 L22 69 L27 70 L23 73 L24 78 L20 75 L16 78 L17 73 L13 70 L18 69 Z M60 15 L62 19 L67 20 L63 23 L64 28 L60 25 L56 28 L57 23 L53 20 L58 19 Z'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 80px 100px;
+        }
+
+        /* Stylized Retro Poster Typography for "ABOUT ME" */
+        .text-poster {
+            font-family: 'Paytone One', 'Impact', 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            line-height: 0.85;
+            letter-spacing: -2px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- Top Navigation & Header -->
+    <header class="sticky top-0 bg-white z-40 border-b border-gray-100">
+        <!-- Search bar row -->
+        <div class="flex flex-col md:flex-row items-center md:items-center px-4 md:px-10 py-4 gap-4 md:gap-0">
+            <!-- Luizabeth Logo with beautiful blending colors -->
+            <div class="flex-shrink-0 md:mr-8 cursor-pointer select-none" onclick="navigateToTab('Todo')">
+                <span class="logo-luizabeth text-4xl md:text-4xl">Luizabeth</span>
+            </div>
+
+            <!-- Search input bar -->
+            <div class="w-full max-w-[692px] relative flex-grow">
+                <form id="search-form" onsubmit="handleSearchSubmit(event)">
+                    <div class="search-box-container flex items-center w-full h-[46px] rounded-full px-4 bg-white">
+                        <input id="search-input" type="text" value="proyectos de programación" 
+                               class="w-full bg-transparent focus:outline-none text-base text-gray-900 pr-3 pl-1 font-normal" />
+                        
+                        <!-- Clear button -->
+                        <button type="button" onclick="clearSearch()" class="p-1.5 mr-1 text-gray-400 hover:text-gray-600 rounded-full hover:bg-gray-100 transition-colors" title="Borrar">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                        
+                        <span class="h-6 w-[1px] bg-gray-200 mr-2.5"></span>
+                        
+                        <!-- Mic button -->
+                        <button type="button" onclick="openVoiceSearch()" class="p-1.5 mr-1 text-blue-500 rounded-full hover:bg-gray-100 transition-colors" title="Búsqueda por voz">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z" fill="#4285F4"/>
+                                <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z" fill="#34A853"/>
+                            </svg>
+                        </button>
+                        
+                        <!-- Lens button -->
+                        <button type="button" onclick="openLensSearch()" class="p-1.5 mr-2 text-red-500 rounded-full hover:bg-gray-100 transition-colors" title="Buscar por imagen">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 7V5a2 2 0 0 1 2-2h2m10 0h2a2 2 0 0 1 2 2v2m0 10v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </button>
+
+                        <!-- Search icon (magnifying glass) -->
+                        <button type="submit" class="p-1.5 text-blue-500 rounded-full hover:bg-gray-100 transition-colors" title="Buscar">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Profile & Utilities -->
+            <div class="hidden md:flex ml-auto items-center space-x-3">
+                <button class="p-2 text-gray-500 rounded-full hover:bg-gray-100 transition-colors" title="Configuración">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                </button>
+                <button class="p-2 text-gray-500 rounded-full hover:bg-gray-100 transition-colors" title="Google Apps">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM6 4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
+                    </svg>
+                </button>
+                <!-- Custom Profile Avatar -->
+                <div class="w-8 h-8 rounded-full overflow-hidden cursor-pointer bg-gradient-to-tr from-indigo-500 to-purple-600 text-white flex items-center justify-center font-bold text-sm shadow-sm hover:shadow transition-shadow">
+                    L
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="flex px-4 md:px-10 lg:px-16 overflow-x-auto scrollbar-none text-sm text-gray-600 select-none">
+            <div class="flex space-x-6 whitespace-nowrap">
+                <!-- Todo -->
+                <button id="tab-Todo" onclick="setActiveTab(this)" class="nav-tab py-3 px-1 border-b-[3px] border-blue-500 text-blue-600 font-medium flex items-center gap-1.5 transition-all font-semibold">
+                    Todo
+                </button>
+
+                <!-- Proyectos -->
+                <button id="tab-Proyectos" onclick="setActiveTab(this)" class="nav-tab py-3 px-1 border-b-[3px] border-transparent hover:text-gray-900 flex items-center gap-1.5 transition-all">
+                    Proyectos
+                </button>
+
+                <!-- Estudios -->
+                <button id="tab-Estudios" onclick="setActiveTab(this)" class="nav-tab py-3 px-1 border-b-[3px] border-transparent hover:text-gray-900 flex items-center gap-1.5 transition-all">
+                    Estudios
+                </button>
+
+                <!-- Contacto -->
+                <button id="tab-Contacto" onclick="setActiveTab(this)" class="nav-tab py-3 px-1 border-b-[3px] border-transparent hover:text-gray-900 flex items-center gap-1.5 transition-all">
+                    Contacto
+                </button>
+
+                <!-- Sobre mí -->
+                <button id="tab-SobreMí" onclick="setActiveTab(this)" class="nav-tab py-3 px-1 border-b-[3px] border-transparent hover:text-gray-900 flex items-center gap-1.5 transition-all">
+                    Sobre mí
+                </button>
+
+                <!-- Servicios -->
+                <button id="tab-Servicios" onclick="setActiveTab(this)" class="nav-tab py-3 px-1 border-b-[3px] border-transparent hover:text-gray-900 flex items-center gap-1.5 transition-all">
+                    Servicios
+                </button>
+
+                <!-- Stack Tecnológico -->
+                <button id="tab-StackTecnológico" onclick="setActiveTab(this)" class="nav-tab py-3 px-1 border-b-[3px] border-transparent hover:text-gray-900 flex items-center gap-1.5 transition-all">
+                    Stack Tecnológico
+                </button>
+
+                <!-- Proceso de Trabajo -->
+                <button id="tab-ProcesodeTrabajo" onclick="setActiveTab(this)" class="nav-tab py-3 px-1 border-b-[3px] border-transparent hover:text-gray-900 flex items-center gap-1.5 transition-all">
+                    Proceso de Trabajo
+                </button>
+
+                <!-- Blog -->
+                <button id="tab-Blog" onclick="setActiveTab(this)" class="nav-tab py-3 px-1 border-b-[3px] border-transparent hover:text-gray-900 flex items-center gap-1.5 transition-all">
+                    Blog
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Results Section (Optimized layout and wider content area) -->
+    <main class="flex-grow w-full px-4 md:px-10 lg:px-16 py-6 max-w-[1000px]">
+        <!-- Search Statistics -->
+        <div id="search-stats" class="text-sm google-light-gray mb-6 select-none font-light">
+            Aproximadamente 9 resultados destacados (0.02 segundos)
+        </div>
+
+        <!-- Clarification Banner -->
+        <div class="bg-[#f8f9fa] border border-gray-200 rounded-2xl p-5 mb-8 hover:shadow-sm transition-shadow">
+            <p class="text-[17px] text-gray-800">
+                Estás viendo el ecosistema digital de <span class="italic font-semibold text-blue-600 hover:underline cursor-pointer" onclick="navigateToTab('SobreMí')">Luizabeth</span>
+            </p>
+            <p class="text-xs google-light-gray mt-1.5">
+                Búsqueda filtrada actualmente para: <span class="text-blue-600 hover:underline cursor-pointer font-medium" id="current-filter-badge">proyectos de programación</span>
+            </p>
+        </div>
+
+        <!-- Dynamic Search Results List Wrapper -->
+        <div id="results-container" class="space-y-10">
+            <!-- Dynamic contents will be injected here via JavaScript -->
+        </div>
+
+        <!-- Related Searches (Wrapper to toggle dynamically) -->
+        <div id="related-searches-section" class="mt-16 border-t border-gray-150 pt-8">
+            <h2 class="text-[22px] text-gray-900 font-medium mb-6">Búsquedas relacionadas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div onclick="handleRelatedSearch('diseño web luizabeth', 'Proyectos')" class="flex items-center space-x-4.5 p-4 bg-gray-50 rounded-2xl hover:bg-gray-100/80 cursor-pointer transition-all border border-gray-100">
+                    <div class="p-2 bg-white rounded-full shadow-xs text-gray-500">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-[15px] font-medium text-gray-800">diseño web luizabeth</span>
+                </div>
+                <div onclick="handleRelatedSearch('servicios de desarrollo web', 'Servicios')" class="flex items-center space-x-4.5 p-4 bg-gray-50 rounded-2xl hover:bg-gray-100/80 cursor-pointer transition-all border border-gray-100">
+                    <div class="p-2 bg-white rounded-full shadow-xs text-gray-500">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-[15px] font-medium text-gray-800">servicios de desarrollo web</span>
+                </div>
+                <div onclick="handleRelatedSearch('proceso de diseño interactivo', 'ProcesodeTrabajo')" class="flex items-center space-x-4.5 p-4 bg-gray-50 rounded-2xl hover:bg-gray-100/80 cursor-pointer transition-all border border-gray-100">
+                    <div class="p-2 bg-white rounded-full shadow-xs text-gray-500">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-[15px] font-medium text-gray-800">proceso de diseño interactivo</span>
+                </div>
+                <div onclick="handleRelatedSearch('contacto luizabeth dev', 'Contacto')" class="flex items-center space-x-4.5 p-4 bg-gray-50 rounded-2xl hover:bg-gray-100/80 cursor-pointer transition-all border border-gray-100">
+                    <div class="p-2 bg-white rounded-full shadow-xs text-gray-500">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-[15px] font-medium text-gray-800">contacto luizabeth dev</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#f2f2f2] text-sm text-[#70757a] border-t border-gray-200 mt-12">
+        <!-- Location details -->
+        <div class="px-4 md:px-10 lg:px-16 py-3 border-b border-gray-300 flex items-center space-x-2">
+            <span class="w-2 h-2 rounded-full bg-gray-400"></span>
+            <span class="font-normal text-gray-600">Venezuela</span>
+            <span class="text-xs text-gray-400">• Basado en tu actividad anterior</span>
+        </div>
+        <!-- Help links (Publicidad Removed, Modals Wired Up) -->
+        <div class="px-4 md:px-10 lg:px-16 py-3.5 flex flex-wrap justify-between gap-y-2 text-xs">
+            <div class="flex space-x-6">
+                <button onclick="openFooterModal('sobre-luizabeth')" class="hover:underline text-left text-gray-600 hover:text-blue-600 transition-colors font-medium">Sobre Luizabeth</button>
+                <button onclick="openFooterModal('negocios')" class="hover:underline text-left text-gray-600 hover:text-blue-600 transition-colors font-medium">Negocios</button>
+                <button onclick="openFooterModal('como-funciona')" class="hover:underline text-left text-gray-600 hover:text-blue-600 transition-colors font-medium">Cómo funciona la Búsqueda</button>
+            </div>
+            <div class="flex space-x-6">
+                <button onclick="openFooterModal('privacidad')" class="hover:underline text-left text-gray-600 hover:text-blue-600 transition-colors font-medium">Privacidad</button>
+                <a href="#" class="hover:underline text-gray-600">Condiciones</a>
+                <a href="#" class="hover:underline text-gray-600">Preferencias</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE FOOTER MODALS SYSTEM (Cerrables con animaciones fluidas) -->
+    
+    <!-- Modal 1: Sobre Luizabeth (Fondo de Estrellas dhhfjd.png y texto largo) -->
+    <div id="modal-sobre-luizabeth" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-xs px-4">
+        <div class="bg-stars-pink rounded-3xl p-6 sm:p-8 max-w-2xl w-full shadow-2xl relative border-4 border-yellow-200 text-white max-h-[85vh] overflow-y-auto">
+            <button onclick="closeFooterModal('sobre-luizabeth')" class="absolute top-4 right-4 bg-yellow-200 hover:bg-yellow-300 text-gray-900 rounded-full p-2 transition-all shadow-md">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <div class="bg-black/40 backdrop-blur-md rounded-2xl p-6 border border-white/20 mt-4">
+                <h3 class="text-2xl font-bold text-yellow-200 mb-4 font-serif">Sobre Luizabeth</h3>
+                <div class="space-y-4 text-sm font-light leading-relaxed text-yellow-50">
+                    <p>
+                        ¡Hola! Qué alegría que estés por aquí. Soy una apasionada creadora digital especializada en el diseño y desarrollo de interfaces interactivas nítidas, responsivas y con un estilo visual único. Creo firmemente que un buen diseño debe sentirse natural, fluido y transmitir una historia valiosa a quien lo experimenta.
+                    </p>
+                    <p>
+                        Mi viaje en el mundo digital comenzó como una forma de dar vida a mis ideas visuales. Con el paso del tiempo, decidí aprender las tecnologías necesarias para transformar diseños estáticos en portfolios, aplicaciones y herramientas funcionales listas para el navegador.
+                    </p>
+                    <p>
+                        Cuando no estoy escribiendo código con HTML5, Tailwind CSS o React.js, me encanta pasar tiempo investigando sobre la psicología del color, explorando nuevas corrientes de diseño retro e interactivo, y grabando videos de procesos cortos para inspirar a otros creadores a sumergirse en este fascinante camino del autodesarrollo y el diseño visual.
+                    </p>
+                    <p>
+                        Este espacio interactivo simula un motor de búsqueda personalizado para que descubras cada aspecto de mi trabajo de una manera divertida e intuitiva. ¡Espero que disfrutes explorando todo lo que he construido para ti!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Negocios (Fondo Blanco - Luizabeth's Studios) -->
+    <div id="modal-negocios" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-xs px-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl relative border border-gray-100 max-h-[85vh] overflow-y-auto">
+            <button onclick="closeFooterModal('negocios')" class="absolute top-4 right-4 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full p-2 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <div class="flex items-center space-x-3 mb-6 mt-2">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm">
+                    LS
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900">Luizabeth's Studios</h3>
+                    <span class="text-xs text-blue-600 font-medium">Boutique de Diseño e Interfaces</span>
+                </div>
+            </div>
+            <div class="space-y-4 text-sm text-gray-600 leading-relaxed font-light">
+                <p>
+                    <strong>Luizabeth's Studios</strong> es un estudio de desarrollo y diseño digital boutique dedicado a construir marcas memorables, interfaces de alta fidelidad y aplicaciones web sumamente dinámicas.
+                </p>
+                <p>
+                    Nos enfocamos en estructurar la experiencia de usuario (UX) ideal para que tus ideas se traduzcan en portales interactivos nítidos y ultra rápidos que se adapten a cualquier dispositivo móvil.
+                </p>
+                <p class="font-semibold text-gray-800">
+                    Ofrecemos soluciones profesionales de diseño UI/UX, creación de flujos interactivos y maquetación web de vanguardia.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Cómo funciona la Búsqueda (Fondo Blanco/Gris) -->
+    <div id="modal-como-funciona" class="fixed inset-0 bg-black/40 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-xs px-4">
+        <div class="bg-slate-50 rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl relative border border-gray-200 max-h-[85vh] overflow-y-auto">
+            <button onclick="closeFooterModal('como-funciona')" class="absolute top-4 right-4 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full p-2 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <h3 class="text-lg font-bold text-gray-900 mb-4 mt-2">¿Cómo funciona la Búsqueda?</h3>
+            <div class="space-y-4 text-sm text-gray-600 leading-relaxed font-light">
+                <p>
+                    Este sitio web es un <strong>portfolio dinámico</strong> que simula la interfaz clásica del motor de búsqueda de Google.
+                </p>
+                <p>
+                    Al hacer clic en cualquiera de las pestañas superiores (como <em>Proyectos, Estudios o Servicios</em>), el sistema consulta de forma instantánea una base de datos local estructurada en JavaScript (`searchDatabase`). 
+                </p>
+                <p>
+                    De igual manera, el buscador de la cabecera actualiza la consulta dinámicamente y filtra los resultados en tiempo real sin recargar la página, garantizando una velocidad de navegación sorprendente.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Privacidad (Términos Sanos e Infantiles / Menores de 18 años) -->
+    <div id="modal-privacidad" class="fixed inset-0 bg-black/40 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-xs px-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl relative border border-gray-100 max-h-[85vh] overflow-y-auto">
+            <button onclick="closeFooterModal('privacidad')" class="absolute top-4 right-4 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full p-2 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <h3 class="text-lg font-bold text-gray-900 mb-4 mt-2">Términos de Privacidad</h3>
+            <div class="space-y-4 text-sm text-gray-600 leading-relaxed font-light">
+                <p class="font-medium text-emerald-600">¡Tu privacidad es nuestra prioridad número uno!</p>
+                <p>
+                    Nos tomamos tu seguridad digital muy en serio. Este sitio web es <strong>100% sano, seguro y apto para menores de 18 años</strong>. 
+                </p>
+                <p>
+                    No recopilamos información personal de ningún tipo, no utilizamos cookies de rastreo comercial ni guardamos contraseñas. Los datos ingresados en el formulario de contacto se procesan y simulan exclusivamente en tu navegador, garantizando un entorno educativo y de pruebas completamente limpio y protegido.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5: Motivación y Estudios (Fondo Verde Tinkerbell Starry con ilustraciones SVG) -->
+    <div id="modal-estudios-motivacion" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-xs px-4">
+        <div class="bg-stars-green rounded-3xl p-6 sm:p-8 max-w-2xl w-full shadow-2xl relative border-4 border-yellow-100 text-gray-800 max-h-[85vh] overflow-y-auto">
+            <button onclick="closeFooterModal('estudios-motivacion')" class="absolute top-4 right-4 bg-yellow-100 hover:bg-yellow-200 text-gray-800 rounded-full p-2 transition-all shadow-md z-10">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <div class="bg-white/95 backdrop-blur-md rounded-2xl p-6 border border-white/20 mt-4 shadow-lg">
+                <h3 class="text-2xl font-bold text-emerald-800 mb-4 font-serif">Mi Pasión por la Tecnología</h3>
+                
+                <div class="space-y-4 text-sm font-light leading-relaxed text-gray-700">
+                    <p>
+                        Mi camino en los estudios está impulsado por una profunda <strong>curiosidad y entusiasmo</strong>. Creo que la programación no se trata solo de escribir código, sino de resolver acertijos diarios y diseñar herramientas que faciliten la vida de las personas de forma amigable.
+                    </p>
+                    <p>
+                        Cada curso que completo en plataformas como <strong>Skilio</strong> amplía mis horizontes. He aprendido lógica computacional con Python, metodologías de trabajo autónomo freelance e incluso finanzas básicas con análisis de inversión. Esto me ayuda a comprender el mundo tecnológico de forma integral.
+                    </p>
+                    <p class="font-semibold text-emerald-700">
+                        "¡El entusiasmo es la chispa que transforma las líneas de código en soluciones mágicas!"
+                    </p>
+                </div>
+
+                <!-- Ilustraciones/Imágenes de mis estudios -->
+                <div class="mt-8 border-t border-gray-100 pt-6">
+                    <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Capturas Visuales de mi Aprendizaje</h4>
+                    <div class="grid grid-cols-3 gap-4">
+                        <!-- Imagen/Ilustración 1: Code workspace mock -->
+                        <div class="bg-slate-900 rounded-xl p-3 flex flex-col justify-between aspect-video shadow-sm">
+                            <div class="flex space-x-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                                <span class="w-1.5 h-1.5 rounded-full bg-yellow-500"></span>
+                                <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                            </div>
+                            <div class="text-[8px] font-mono text-emerald-400 space-y-0.5">
+                                <div>def aprender():</div>
+                                <div class="pl-2">print("Python 🐍")</div>
+                            </div>
+                        </div>
+
+                        <!-- Imagen/Ilustración 2: Design palette mock -->
+                        <div class="bg-pink-50 rounded-xl p-3 flex flex-col justify-between aspect-video shadow-sm border border-pink-100">
+                            <span class="text-[9px] font-bold text-pink-700 uppercase tracking-widest">Colores</span>
+                            <div class="flex space-x-1.5">
+                                <span class="w-3.5 h-3.5 rounded-full bg-yellow-300"></span>
+                                <span class="w-3.5 h-3.5 rounded-full bg-pink-400"></span>
+                                <span class="w-3.5 h-3.5 rounded-full bg-emerald-400"></span>
+                            </div>
+                        </div>
+
+                        <!-- Imagen/Ilustración 3: Books mock -->
+                        <div class="bg-sky-50 rounded-xl p-3 flex flex-col justify-between aspect-video shadow-sm border border-sky-100">
+                            <div class="w-6 h-6 rounded-lg bg-sky-500 flex items-center justify-center text-white">
+                                <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <span class="text-[9px] font-bold text-sky-700">Skilio Docs</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- VOICE SEARCH MODAL (Interactive Mock) -->
+    <div id="voice-modal" class="fixed inset-0 bg-black/40 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-xs">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl flex flex-col items-center relative border border-gray-100">
+            <button onclick="closeVoiceSearch()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 rounded-full p-1 hover:bg-gray-100 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <h3 class="text-xl font-medium text-gray-800 mb-6 text-center">Escuchando...</h3>
+            <div class="w-24 h-24 rounded-full bg-red-50 flex items-center justify-center mb-6 relative animate-pulse">
+                <div class="absolute inset-0 rounded-full bg-red-100 animate-ping opacity-75"></div>
+                <svg class="w-12 h-12 text-red-500 relative z-10" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.42 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>
+                </svg>
+            </div>
+            <p class="text-sm text-gray-500 text-center">Di algo como "proyectos de programación" o "estudios de Luizabeth"</p>
+        </div>
+    </div>
+
+    <!-- GOOGLE LENS MODAL (Interactive Mock) -->
+    <div id="lens-modal" class="fixed inset-0 bg-black/40 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-xs">
+        <div class="bg-white rounded-2xl p-6 max-w-xl w-full mx-4 shadow-2xl relative border border-gray-100">
+            <button onclick="closeLensSearch()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 rounded-full p-1 hover:bg-gray-100 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <h3 class="text-lg font-medium text-gray-900 mb-4">Busca cualquier imagen con Luizabeth Lens</h3>
+            
+            <div class="border-2 border-dashed border-gray-200 rounded-2xl p-12 flex flex-col items-center justify-center bg-gray-50 hover:bg-gray-100/50 transition-colors cursor-pointer">
+                <svg class="w-12 h-12 text-gray-400 mb-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                </svg>
+                <p class="text-sm text-gray-700 text-center font-medium">Arrastra una imagen aquí o <span class="text-blue-600 hover:underline">sube un archivo</span></p>
+                <p class="text-xs text-gray-400 mt-2">Soporta PNG, JPG, WEBP</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CUSTOM TOAST NOTIFICATION -->
+    <div id="custom-toast" class="fixed bottom-5 right-5 bg-gray-900 text-white px-5 py-3 rounded-xl shadow-xl z-50 flex items-center space-x-3 transition-all duration-300 transform translate-y-20 opacity-0">
+        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <span id="toast-message" class="text-sm font-medium">¡Mensaje enviado con éxito!</span>
+    </div>
+
+    <!-- Interactive Logic & Simulated Data Router -->
+    <script>
+        // Dictionary of Search Results for each section tab
+        const searchDatabase = {
+            'Todo': `
+                <!-- Result 1: Proyectos -->
+                <div class="group">
+                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
+                        <div class="w-7 h-7 bg-blue-50 rounded-full flex items-center justify-center shadow-xs text-blue-600 font-bold text-xs">P</div>
+                        <div class="flex flex-col">
+                            <span class="text-xs font-medium text-gray-900 leading-tight">Proyectos</span>
+                            <span class="text-xs text-gray-500 leading-none mt-0.5 hover:underline cursor-pointer">https://luizabeth.dev &gt; proyectos &gt; destacados</span>
+                        </div>
+                    </div>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
+                        <a href="#" onclick="navigateToTab('Proyectos'); return false;">Mis Proyectos de Desarrollo Web y Aplicaciones</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                        Explora mi colección de proyectos interactivos creados con tecnologías modernas. Incluye aplicaciones web completas, juegos en canvas y diseños web responsivos de alta fidelidad.
+                    </p>
+                </div>
+
+                <!-- Result 2: Estudios -->
+                <div class="group">
+                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
+                        <div class="w-7 h-7 bg-green-50 rounded-full flex items-center justify-center shadow-xs text-green-600 font-bold text-xs">E</div>
+                        <div class="flex flex-col">
+                            <span class="text-xs font-medium text-gray-900 leading-tight">Estudios</span>
+                            <span class="text-xs text-gray-500 leading-none mt-0.5 hover:underline cursor-pointer">https://luizabeth.dev &gt; estudios &gt; certificaciones</span>
+                        </div>
+                    </div>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
+                        <a href="#" onclick="navigateToTab('Estudios'); return false;">Estudios Académicos y Formación Tecnológica Continua</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                        Mi trayectoria educativa, cursos certificados en desarrollo de software, diseño interactivo y algoritmos informáticos para construir soluciones digitales seguras y eficientes.
+                    </p>
+                </div>
+
+                <!-- Result 3: Stack Tecnológico -->
+                <div class="group">
+                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
+                        <div class="w-7 h-7 bg-amber-50 rounded-full flex items-center justify-center shadow-xs text-amber-600 font-bold text-xs">S</div>
+                        <div class="flex flex-col">
+                            <span class="text-xs font-medium text-gray-900 leading-tight">Tecnologías</span>
+                            <span class="text-xs text-gray-500 leading-none mt-0.5 hover:underline cursor-pointer">https://luizabeth.dev &gt; stack &gt; herramientas</span>
+                        </div>
+                    </div>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
+                        <a href="#" onclick="navigateToTab('StackTecnológico'); return false;">Stack de Desarrollo: Lenguajes y Frameworks Preferidos</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                        Dominio técnico en HTML5, CSS3 con Tailwind, JavaScript moderno, React, bases de datos y herramientas de desarrollo visual como Canva e Figma para el diseño UI/UX.
+                    </p>
+                </div>
+            `,
+            'Proyectos': `
+                <!-- Proyecto 1 -->
+                <div class="group">
+                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
+                        <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">P1</div>
+                        <span class="text-xs text-gray-500 hover:underline cursor-pointer">https://luizabeth.dev &gt; proyectos &gt; e-commerce</span>
+                    </div>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
+                        <a href="https://tu-proyecto-ecommerce.com" target="_blank">E-Commerce Premium - Plataforma Completa de Ventas</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                        Desarrollo de una tienda en línea moderna con carrito de compras reactivo, pasarela de pago simulada, diseño ultra rápido con Tailwind y base de datos persistente.
+                    </p>
+                </div>
+                
+                <!-- Proyecto 2 -->
+                <div class="group">
+                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
+                        <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">P2</div>
+                        <span class="text-xs text-gray-500 hover:underline cursor-pointer">https://luizabeth.dev &gt; proyectos &gt; dashboard</span>
+                    </div>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
+                        <a href="https://tu-proyecto-dashboard.com" target="_blank">Dashboard de Monitoreo - Visualización de Datos en Tiempo Real</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                        Panel de control con gráficos interactivos dinámicos, filtros de rango de fechas y soporte para modo oscuro adaptativo. Desarrollado con React y Chart.js.
+                    </p>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="group">
+                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
+                        <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">P3</div>
+                        <span class="text-xs text-gray-500 hover:underline cursor-pointer">https://luizabeth.dev &gt; proyectos &gt; canvas-game</span>
+                    </div>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
+                        <a href="https://tu-proyecto-arcade.com" target="_blank">Retro-Space Invaders - Videojuego Clásico en HTML5 Canvas</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                        Un videojuego interactivo desarrollado enteramente con Javascript clásico. Cuenta con sistema de colisiones preciso, sprites vectoriales, marcador dinámico de puntos y control táctil/teclado.
+                    </p>
+                </div>
+
+                <!-- Proyecto 4 -->
+                <div class="group">
+                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
+                        <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">P4</div>
+                        <span class="text-xs text-gray-500 hover:underline cursor-pointer">https://luizabeth.dev &gt; proyectos &gt; weather-wise</span>
+                    </div>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
+                        <a href="https://tu-proyecto-clima.com" target="_blank">WeatherWise - App del Clima Global en Tiempo Real</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                        Aplicación que se conecta a APIs meteorológicas para proveer estadísticas climáticas del día y predicciones de la semana de cualquier país, acompañada de una interfaz que cambia de color según la temperatura.
+                    </p>
+                </div>
+
+                <!-- Proyecto 5 -->
+                <div class="group">
+                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
+                        <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">P5</div>
+                        <span class="text-xs text-gray-500 hover:underline cursor-pointer">https://luizabeth.dev &gt; proyectos &gt; kanban-board</span>
+                    </div>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
+                        <a href="https://tu-proyecto-tareas.com" target="_blank">TaskSphere - Organizador de Tareas Personal Estilo Kanban</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                        Un gestor de flujo de trabajo intuitivo con columnas de "Pendientes", "En Curso" y "Completadas". Implementa funcionalidad Drag-and-Drop y sincronización instantánea con localStorage.
+                    </p>
+                </div>
+
+                <!-- Proyecto 6 -->
+                <div class="group">
+                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
+                        <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">P6</div>
+                        <span class="text-xs text-gray-500 hover:underline cursor-pointer">https://luizabeth.dev &gt; proyectos &gt; color-palette</span>
+                    </div>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
+                        <a href="https://tu-proyecto-colores.com" target="_blank">ColorSphere - Generador de Paletas Cromáticas para Diseñadores</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                        Generador inteligente de paletas de colores armónicas. Permite exportar los códigos Hexadecimales de forma rápida con un clic para acelerar la maquetación de proyectos de diseño visual.
+                    </p>
+                </div>
+            `,
+            'Estudios': `
+                <!-- Colegio Calasanz Valencia Link Directo -->
+                <div class="group mb-6">
+                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
+                        <div class="w-7 h-7 bg-blue-50 rounded-full flex items-center justify-center font-bold text-xs text-blue-600">C</div>
+                        <div class="flex flex-col">
+                            <span class="text-xs font-medium text-gray-900 leading-tight">Colegio Calasanz Valencia</span>
+                            <span class="text-xs text-gray-500 leading-none mt-0.5 hover:underline cursor-pointer">https://www.colegiocalasanzvalencia.com</span>
+                        </div>
+                    </div>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
+                        <a href="https://www.colegiocalasanzvalencia.com" target="_blank">Colegio Calasanz Valencia - Mi Formación Secundaria</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                        Visita la página de mi querida institución educativa secundaria, donde reforcé mis bases de aprendizaje, lógica, convivencia y creatividad.
+                    </p>
+                </div>
+
+                <!-- Tarjetas de Certificados Reales de Skilio -->
+                <div class="mt-8 border-t border-gray-100 pt-6">
+                    <h4 class="text-sm font-bold text-gray-700 mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Certificaciones Profesionales en Skilio
+                    </h4>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <!-- Certificado 1: Python -->
+                        <div class="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-md hover:border-green-300 transition-all flex flex-col justify-between group/card">
+                            <div>
+                                <div class="flex justify-between items-start mb-4">
+                                    <span class="bg-yellow-50 text-amber-700 border border-yellow-200 text-[10px] font-bold px-2.5 py-1 rounded-md">PROGRAMACIÓN</span>
+                                    <span class="text-xs font-semibold text-gray-400">10/05/2026</span>
+                                </div>
+                                <h4 class="font-bold text-gray-800 text-base leading-tight mb-2 group-hover/card:text-blue-600 transition-colors">Python desde cero</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed font-light mb-4">
+                                    Finalización exitosa del curso de programación en Python desde cero en Skilio. Lógica de código, flujos lógicos y estructuras de datos.
+                                </p>
+                            </div>
+                            <div class="border-t border-gray-150 pt-4 flex flex-col mt-2">
+                                <span class="text-[10px] text-gray-400">ID: cert_6a013537bdfa7</span>
+                                <span class="text-[10px] text-gray-500 mt-1 font-semibold">Adrián Sáenz (CEO Skilio)</span>
+                            </div>
+                        </div>
+
+                        <!-- Certificado 2: Freelance -->
+                        <div class="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-md hover:border-green-300 transition-all flex flex-col justify-between group/card">
+                            <div>
+                                <div class="flex justify-between items-start mb-4">
+                                    <span class="bg-blue-50 text-blue-700 border border-blue-200 text-[10px] font-bold px-2.5 py-1 rounded-md">FINANZAS & NEGOCIOS</span>
+                                    <span class="text-xs font-semibold text-gray-400">10/05/2026</span>
+                                </div>
+                                <h4 class="font-bold text-gray-800 text-base leading-tight mb-2 group-hover/card:text-blue-600 transition-colors">Conviértete en Freelance</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed font-light mb-4">
+                                    Conclusión del curso Conviértete en Freelance desde cero en Skilio. Estrategias de posicionamiento, ofertas dinámicas y trabajo independiente.
+                                </p>
+                            </div>
+                            <div class="border-t border-gray-150 pt-4 flex flex-col mt-2">
+                                <span class="text-[10px] text-gray-400">ID: cert_6a0141b480a39</span>
+                                <span class="text-[10px] text-gray-500 mt-1 font-semibold">Adrián Sáenz (CEO Skilio)</span>
+                            </div>
+                        </div>
+
+                        <!-- Certificado 3: Bolsa de Valores -->
+                        <div class="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-md hover:border-green-300 transition-all flex flex-col justify-between group/card">
+                            <div>
+                                <div class="flex justify-between items-start mb-4">
+                                    <span class="bg-green-50 text-emerald-700 border border-green-200 text-[10px] font-bold px-2.5 py-1 rounded-md">INVERSIÓN</span>
+                                    <span class="text-xs font-semibold text-gray-400">10/05/2026</span>
+                                </div>
+                                <h4 class="font-bold text-gray-800 text-base leading-tight mb-2 group-hover/card:text-blue-600 transition-colors">Inversión en Bolsa de Valores</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed font-light mb-4">
+                                    Finalización del curso de Inversión en la Bolsa de Valores de Skilio. Fundamentos del mercado, análisis financiero básico y control de riesgos.
+                                </p>
+                            </div>
+                            <div class="border-t border-gray-150 pt-4 flex flex-col mt-2">
+                                <span class="text-[10px] text-gray-400">ID: cert_6a00fb5f906ca</span>
+                                <span class="text-[10px] text-gray-500 mt-1 font-semibold">Adrián Sáenz (CEO Skilio)</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Enlace interactivo que abre el modal verde Tinkerbell con estrellas -->
+                <div class="group mt-10 pt-6 border-t border-gray-150">
+                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
+                        <div class="w-7 h-7 bg-green-50 rounded-full flex items-center justify-center font-bold text-xs text-green-600">L</div>
+                        <div class="flex flex-col">
+                            <span class="text-xs font-medium text-gray-900 leading-tight">Luizabeth Contreras</span>
+                            <span class="text-xs text-gray-500 leading-none mt-0.5 hover:underline cursor-pointer">https://luizabeth.dev &gt; estudios &gt; motivacion</span>
+                        </div>
+                    </div>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
+                        <a href="#" onclick="openFooterModal('estudios-motivacion'); return false;">Mi Pasión, Entusiasmo y Futuro en la Tecnología</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                        Haz clic aquí para abrir un resumen interactivo sobre cómo canalizo mi entusiasmo por aprender y mis conocimientos avanzados en herramientas digitales, acompañado de capturas de mis estudios.
+                    </p>
+                </div>
+            `,
+            'Contacto': `
+                <div class="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 max-w-xl mx-auto mb-8">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        Enviar un mensaje directo a Luizabeth
+                    </h3>
+                    <form onsubmit="submitFormSimulated(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 mb-1">Tu Nombre</label>
+                            <input required type="text" placeholder="Ej. Juan Pérez" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500" />
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 mb-1">Correo Electrónico</label>
+                            <input required type="email" placeholder="juan@ejemplo.com" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500" />
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 mb-1">Tu Mensaje</label>
+                            <textarea required rows="4" placeholder="¿En qué puedo ayudarte?" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-5 rounded-full shadow-sm hover:shadow-md transition-all">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Tarjetas de Enlaces de Contacto Rediseñadas -->
+                <div class="mt-12">
+                    <h4 class="text-sm font-semibold text-gray-700 uppercase tracking-wider mb-2 text-center text-slate-800">O encuéntrame directamente en mis redes</h4>
+                    <p class="text-xs text-slate-500 text-center mb-6 max-w-md mx-auto">
+                        <strong>Nota de Emprendimiento:</strong> Los métodos de contacto provistos a continuación están destinados de forma exclusiva a fines de emprendimiento, propuestas comerciales o alianzas de marca sanas y seguras.
+                    </p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                        
+                        <!-- Instagram -->
+                        <a href="https://instagram.com" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-pink-200 transition-all text-center group">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold text-gray-800">Instagram</span>
+                            <span class="text-[10px] text-gray-400 mt-0.5">@luizabeth</span>
+                        </a>
+
+                        <!-- TikTok -->
+                        <a href="https://tiktok.com" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-cyan-200 transition-all text-center group">
+                            <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12.525.01c1.31 0 2.5.43 3.47 1.13.04-.15.08-.3.12-.45h2.15v2.24c-.67-.01-1.33-.11-1.97-.31a4.93 4.93 0 01-3.13-2.58l-.04.14v7.7c0 2.56-2.07 4.63-4.63 4.63a4.63 4.63 0 01-4.63-4.63c0-2.56 2.07-4.63 4.63-4.63.42 0 .83.06 1.22.17V1.7c-.4-.06-.8-.09-1.22-.09a7.35 7.35 0 00-7.35 7.35 7.35 0 007.35 7.35 7.35 0 007.35-7.35V2.32c1.23.95 2.76 1.52 4.43 1.52v-2.1c-1.23 0-2.35-.45-3.23-1.2-.28-.24-.52-.51-.73-.81z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold text-gray-800">TikTok</span>
+                            <span class="text-[10px] text-gray-400 mt-0.5">@luizabeth.dev</span>
+                        </a>
+
+                        <!-- YouTube -->
+                        <a href="https://youtube.com" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-red-200 transition-all text-center group">
+                            <div class="w-12 h-12 rounded-xl bg-red-600 flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.871.507 9.388.507 9.388.507s7.517 0 9.388-.507a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold text-gray-800">YouTube</span>
+                            <span class="text-[10px] text-gray-400 mt-0.5">Luizabeth Blog</span>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a href="https://facebook.com" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-blue-200 transition-all text-center group">
+                            <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold text-gray-800">Facebook</span>
+                            <span class="text-[10px] text-gray-400 mt-0.5">Luizabeth</span>
+                        </a>
+
+                        <!-- GitHub -->
+                        <a href="https://github.com" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-gray-300 transition-all text-center group">
+                            <div class="w-12 h-12 rounded-xl bg-gray-900 flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold text-gray-800">GitHub</span>
+                            <span class="text-[10px] text-gray-400 mt-0.5">@luizabeth-dev</span>
+                        </a>
+
+                        <!-- Upwork -->
+                        <a href="https://upwork.com" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-green-200 transition-all text-center group">
+                            <div class="w-12 h-12 rounded-xl bg-[#14a800] flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
+                                <span class="font-bold text-lg">up</span>
+                            </div>
+                            <span class="text-xs font-bold text-gray-800">Upwork</span>
+                            <span class="text-[10px] text-gray-400 mt-0.5">Freelancer</span>
+                        </a>
+
+                        <!-- Telegram -->
+                        <a href="https://telegram.org" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-sky-200 transition-all text-center group">
+                            <div class="w-12 h-12 rounded-xl bg-[#0088cc] flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm4.58-13.66l-1.63 7.67c-.12.53-.44.66-.88.41l-2.48-1.83-1.2 1.15c-.13.13-.24.24-.5.24l.18-2.52 4.58-4.14c.2-.18-.04-.28-.3-.1l-5.67 3.57-2.44-.76c-.53-.17-.54-.53.11-.79l9.53-3.67c.44-.16.83.11.68.83z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold text-gray-800">Telegram</span>
+                            <span class="text-[10px] text-gray-400 mt-0.5">@luizabeth</span>
+                        </a>
+
+                        <!-- WhatsApp -->
+                        <a href="https://whatsapp.com" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-green-300 transition-all text-center group">
+                            <div class="w-12 h-12 rounded-xl bg-[#25D366] flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.287 1.487 4.912 1.488 5.405 0 9.803-4.393 9.806-9.799.002-2.62-1.018-5.084-2.871-6.938C16.638 2.052 14.175 1.03 11.554 1.03c-5.412 0-9.81 4.393-9.813 9.801-.001 1.77.487 3.5 1.411 5.013l-.935 3.41 3.491-.915z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold text-gray-800">WhatsApp</span>
+                            <span class="text-[10px] text-gray-400 mt-0.5">Escríbeme</span>
+                        </a>
+
+                        <!-- Gmail -->
+                        <a href="mailto:tu-correo@gmail.com" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-red-150 transition-all text-center group">
+                            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center text-red-600 mb-2 shadow-xs group-hover:scale-105 transition-transform">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-1.29 1.454-2.032 2.514-1.302L12 10.74l9.486-7.585c1.06-.729 2.514.013 2.514 1.302z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold text-gray-800">Gmail</span>
+                            <span class="text-[10px] text-gray-400 mt-0.5">Correo directo</span>
+                        </a>
+
+                    </div>
+                </div>
+            `,
+            'SobreMí': `
+                <!-- PRIMERA PARTE: RESUMEN BIOGRÁFICO DE LUIZABETH -->
+                <div class="flex flex-col md:flex-row gap-6 items-start mb-10">
+                    <div class="flex-grow space-y-4">
+                        <div class="group">
+                            <span class="text-xs text-gray-500 hover:underline cursor-pointer">https://luizabeth.dev &gt; sobre-mi &gt; biografia</span>
+                            <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
+                                <a href="#">¿Quién es Luizabeth? - Desarrolladora y Diseñadora Digital</a>
+                            </h3>
+                            <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                                Soy Luizabeth, tengo 15 años. Últimamente he estado muy enfrascada en esto de crear cosas a partir de un código, he hecho muchos cursos para poder decir que soy desarrolladora y diseñadora web UI/UX. Soy una persona de espíritu libre y busco reflejar mi esencia en cada proyecto que realizo. Utilizo la inteligencia artificial para impulsar el rendimiento y obtener más conocimiento.
+                            </p>
+                        </div>
+                        <div class="group">
+                            <h4 class="text-sm font-semibold text-gray-800 mb-1">Impacto y Compromiso Visual</h4>
+                            <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                                Me encargo de diseñar la experiencia de tus usuarios para que destaques, haciendo trabajos excelentes y accesibles para todo público.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Mock Knowledge Panel stylized like Google -->
+                    <div class="w-full md:w-[280px] bg-gray-50 border border-gray-200 rounded-2xl p-5 shrink-0">
+                        <h4 class="text-lg font-medium text-gray-900 mb-2">Ficha de Luizabeth</h4>
+                        <p class="text-xs text-gray-500 mb-4">Desarrolladora Web / UI Designer</p>
+                        <div class="space-y-2 text-xs">
+                            <div class="border-t border-gray-200 pt-2"><span class="font-semibold text-gray-700">País natal:</span> Venezuela</div>
+                            <div class="border-t border-gray-200 pt-2"><span class="font-semibold text-gray-700">Edad:</span> 15 años</div>
+                            <div class="border-t border-gray-200 pt-2"><span class="font-semibold text-gray-700">Especialidad:</span> Interfaces interactivas nítidas</div>
+                            <div class="border-t border-gray-200 pt-2"><span class="font-semibold text-gray-700">Enfoque:</span> IA, UI/UX, Accesibilidad, Desarrollo Web</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN PERSONALIZADA "ABOUT ME" -->
+                <div class="mt-12 bg-checkerboard rounded-3xl p-6 sm:p-10 relative overflow-hidden shadow-inner border border-pink-100 flex flex-col md:flex-row gap-8 items-center">
+                    
+                    <!-- Retro Graphic Big Header -->
+                    <div class="absolute top-2 left-6 right-6 pointer-events-none select-none text-center md:text-left z-0 opacity-15">
+                        <h2 class="text-poster text-6xl sm:text-8xl md:text-[140px] text-gray-900 leading-none">ABOUT ME</h2>
+                    </div>
+
+                    <!-- Left side: Photobox with border shadow containing custom user image -->
+                    <div class="w-[240px] h-[300px] shrink-0 bg-white p-4 pb-12 rounded-xl shadow-xl rotate-1 hover:rotate-0 transition-transform duration-300 z-10 border border-gray-200">
+                        <div class="w-full h-[220px] bg-indigo-50 rounded-lg overflow-hidden flex items-center justify-center relative shadow-inner">
+                            <!-- Tu imagen real que colocarás en la misma carpeta de tu proyecto -->
+                            <img src="remove_light.png.jpg" alt="Luizabeth Contreras" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-3.5 text-center">
+                            <span class="font-bold text-gray-700 text-sm tracking-wide">LUIZABETH</span>
+                        </div>
+                    </div>
+
+                    <!-- Right side: Bio card details with user's custom text -->
+                    <div class="flex-grow bg-white/95 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-pink-50/50 z-10 max-w-lg">
+                        <p class="text-[11px] text-pink-600 font-bold tracking-widest uppercase mb-1.5">CREATING STORIES WITH PIXELS</p>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 font-serif">¡Hola! Soy Luizabeth</h3>
+                        <p class="text-sm text-gray-700 leading-relaxed font-light mb-4">
+                            Soy Luizabeth, tengo 15 años. Últimamente he estado muy enfrascada en esto de crear cosas a partir de un código, he hecho muchos cursos para poder decir que soy desarrolladora y diseñadora web UI/UX. Soy una persona de espíritu libre y busco reflejar mi esencia en cada proyecto que realizo. Utilizo la inteligencia artificial para impulsar el rendimiento y obtener más conocimiento.
+                        </p>
+                        <p class="text-sm text-gray-700 leading-relaxed font-light mb-4">
+                            Me encargo de diseñar la experiencia de tus usuarios para que destaques, haciendo trabajos excelentes y accesibles para todo público.
+                        </p>
+                        <p class="text-xs font-semibold text-pink-600 italic">"El diseño es magia, el desarrollo es real. creemos algo juntos"</p>
+                    </div>
+
+                </div>
+
+                <!-- SECCIÓN DE VIDEOS DE YOUTUBE -->
+                <div class="mt-12 border-t border-gray-100 pt-8">
+                    <h3 class="text-lg font-medium text-gray-900 mb-6 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.871.507 9.388.507 9.388.507s7.517 0 9.388-.507a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                        Videos Recientes (Mi Blog Personal en YouTube)
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <!-- Miniatura 1 -->
+                        <a href="https://youtube.com" target="_blank" class="group/video block bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-xs hover:shadow-md hover:border-red-100 transition-all">
+                            <div class="relative aspect-video bg-gray-100 flex items-center justify-center overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-tr from-slate-800 to-indigo-900 flex flex-col justify-center items-center p-4">
+                                    <span class="text-white text-xs font-bold tracking-wider uppercase mb-1 bg-blue-600/80 px-2 py-0.5 rounded">Tutorial</span>
+                                    <span class="text-white text-center font-bold text-sm leading-tight px-2 drop-shadow-md">Mi primer proyecto web de cero</span>
+                                </div>
+                                <div class="absolute w-12 h-12 rounded-full bg-black/75 flex items-center justify-center text-white scale-100 group-hover/video:scale-110 transition-transform">
+                                    <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                                <span class="absolute bottom-2 right-2 bg-black/85 text-[10px] text-white font-medium px-1.5 py-0.5 rounded">10:15</span>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold text-gray-900 text-sm group-hover/video:text-blue-600 transition-colors line-clamp-2">
+                                    Cómo crear tu primer Portfolio Web usando HTML5 y Tailwind CSS de forma fácil
+                                </h4>
+                                <p class="text-xs text-gray-400 mt-1">Luizabeth Blog • 1.2k vistas • hace 3 días</p>
+                            </div>
+                        </a>
+
+                        <!-- Miniatura 2 -->
+                        <a href="https://youtube.com" target="_blank" class="group/video block bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-xs hover:shadow-md hover:border-red-100 transition-all">
+                            <div class="relative aspect-video bg-gray-100 flex items-center justify-center overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-tr from-violet-800 to-fuchsia-900 flex flex-col justify-center items-center p-4">
+                                    <span class="text-white text-xs font-bold tracking-wider uppercase mb-1 bg-purple-600/80 px-2 py-0.5 rounded">UI/UX</span>
+                                    <span class="text-white text-center font-bold text-sm leading-tight px-2 drop-shadow-md">¿Cómo elegir colores para tu web?</span>
+                                </div>
+                                <div class="absolute w-12 h-12 rounded-full bg-black/75 flex items-center justify-center text-white scale-100 group-hover/video:scale-110 transition-transform">
+                                    <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                                <span class="absolute bottom-2 right-2 bg-black/85 text-[10px] text-white font-medium px-1.5 py-0.5 rounded">08:42</span>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold text-gray-900 text-sm group-hover/video:text-blue-600 transition-colors line-clamp-2">
+                                    La Psicología del Color en el Desarrollo de Interfaces modernas: Guía Básica
+                                </h4>
+                                <p class="text-xs text-gray-400 mt-1">Luizabeth Blog • 950 vistas • hace 1 semana</p>
+                            </div>
+                        </a>
+
+                        <!-- Miniatura 3 -->
+                        <a href="https://youtube.com" target="_blank" class="group/video block bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-xs hover:shadow-md hover:border-red-100 transition-all">
+                            <div class="relative aspect-video bg-gray-100 flex items-center justify-center overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-tr from-cyan-800 to-emerald-900 flex flex-col justify-center items-center p-4">
+                                    <span class="text-white text-xs font-bold tracking-wider uppercase mb-1 bg-emerald-600/80 px-2 py-0.5 rounded">Vlog</span>
+                                    <span class="text-white text-center font-bold text-sm leading-tight px-2 drop-shadow-md">Mi rutina de estudio en desarrollo</span>
+                                </div>
+                                <div class="absolute w-12 h-12 rounded-full bg-black/75 flex items-center justify-center text-white scale-100 group-hover/video:scale-110 transition-transform">
+                                    <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                                <span class="absolute bottom-2 right-2 bg-black/85 text-[10px] text-white font-medium px-1.5 py-0.5 rounded">12:30</span>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold text-gray-900 text-sm group-hover/video:text-blue-600 transition-colors line-clamp-2">
+                                    Estudiar Programación y Diseño de forma organizada: Consejos y Hábitos
+                                </h4>
+                                <p class="text-xs text-gray-400 mt-1">Luizabeth Blog • 1.5k vistas • hace 2 semanas</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            `,
+            'Servicios': `
+                <div class="group mb-8">
+                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
+                        <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">S</div>
+                        <span class="text-xs text-gray-500 hover:underline cursor-pointer">https://luizabeth.dev &gt; servicios &gt; catalogo</span>
+                    </div>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-4">
+                        <a href="#" onclick="showToast('Explorando catálogo de servicios...'); return false;">Servicios Profesionales de Diseño y Desarrollo</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light mb-6">
+                        Ofrezco un abanico completo de soluciones de alta tecnología y diseño adaptativo a la medida para materializar tus ideas:
+                    </p>
+
+                    <!-- Lista Premium de los 5 Servicios del Portfolio -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <!-- 1. WEBS -->
+                        <div class="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-md hover:border-blue-100 transition-all flex flex-col justify-between group/card">
+                            <div>
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-4">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9" />
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-gray-800 text-base leading-tight mb-2 group-hover/card:text-blue-600 transition-colors">1. Webs a Medida</h4>
+                                <div class="text-xs text-gray-500 space-y-1 mb-4">
+                                    <span class="block">• Landing pages de alta conversión</span>
+                                    <span class="block">• SaaS webs modernas y fluidas</span>
+                                    <span class="block">• Portfolios interactivos creativos</span>
+                                    <span class="block">• E-Commerce (Tiendas virtuales)</span>
+                                    <span class="block">• Blogs optimizados para lectores</span>
+                                    <span class="block">• Webs corporativas con estilo retro</span>
+                                </div>
+                            </div>
+                            <button onclick="showToast('Solicitando información sobre Desarrollo de Webs...')" class="mt-4 bg-gray-50 hover:bg-blue-600 hover:text-white text-xs text-blue-600 font-semibold py-2 px-4 rounded-xl transition-all self-start">
+                                Cotizar Servicio
+                            </button>
+                        </div>
+
+                        <!-- 2. APPS -->
+                        <div class="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-md hover:border-blue-100 transition-all flex flex-col justify-between group/card">
+                            <div>
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-4">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-gray-800 text-base leading-tight mb-2 group-hover/card:text-blue-600 transition-colors">2. Aplicaciones (Apps)</h4>
+                                <div class="text-xs text-gray-500 space-y-1 mb-4">
+                                    <span class="block">• Apps móviles nativas para iOS y Android</span>
+                                    <span class="block">• Aplicaciones Web Progresivas (PWA)</span>
+                                    <span class="block">• Single Page Applications (SPA) fluidas</span>
+                                </div>
+                            </div>
+                            <button onclick="showToast('Solicitando información sobre Desarrollo de Apps...')" class="mt-4 bg-gray-50 hover:bg-blue-600 hover:text-white text-xs text-blue-600 font-semibold py-2 px-4 rounded-xl transition-all self-start">
+                                Cotizar Servicio
+                            </button>
+                        </div>
+
+                        <!-- 3. BOTS DE AI -->
+                        <div class="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-md hover:border-blue-100 transition-all flex flex-col justify-between group/card">
+                            <div>
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-4">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.364l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 113.536 0" />
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-gray-800 text-base leading-tight mb-2 group-hover/card:text-blue-600 transition-colors">3. Bots con Inteligencia Artificial</h4>
+                                <div class="text-xs text-gray-500 space-y-1 mb-4">
+                                    <span class="block">• Bots de automatización para Telegram</span>
+                                    <span class="block">• Integración inteligente en WhatsApp</span>
+                                    <span class="block">• Automatizadores interactivos de TikTok</span>
+                                    <span class="block">• Filtros y respuestas inteligentes para Gmail</span>
+                                </div>
+                            </div>
+                            <button onclick="showToast('Solicitando información sobre Bots de IA...')" class="mt-4 bg-gray-50 hover:bg-blue-600 hover:text-white text-xs text-blue-600 font-semibold py-2 px-4 rounded-xl transition-all self-start">
+                                Cotizar Servicio
+                            </button>
+                        </div>
+
+                        <!-- 4. SOPORTE TÉCNICO Y WEB "NO-CODE" -->
+                        <div class="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-md hover:border-blue-100 transition-all flex flex-col justify-between group/card">
+                            <div>
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-4">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31(2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-gray-800 text-base leading-tight mb-2 group-hover/card:text-blue-600 transition-colors">4. Soporte y Web "No-Code"</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed font-light mb-4">
+                                    Soporte técnico, mantenimiento y estructuración de sitios ágiles en plataformas modernas como WordPress, Webflow y Shopify para soluciones prontas.
+                                </p>
+                            </div>
+                            <button onclick="showToast('Solicitando información sobre Soporte Técnico...')" class="mt-4 bg-gray-50 hover:bg-blue-600 hover:text-white text-xs text-blue-600 font-semibold py-2 px-4 rounded-xl transition-all self-start">
+                                Cotizar Servicio
+                            </button>
+                        </div>
+
+                        <!-- 5. IMPULSO DIGITAL -->
+                        <div class="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-md hover:border-blue-100 transition-all flex flex-col justify-between group/card">
+                            <div>
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-4">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-gray-800 text-base leading-tight mb-2 group-hover/card:text-blue-600 transition-colors">5. Impulso Digital</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed font-light mb-4">
+                                    Optimización del posicionamiento SEO, auditorías de velocidad extrema en celulares, análisis de conversión UX y estrategias de visibilidad de marca.
+                                </p>
+                            </div>
+                            <button onclick="showToast('Solicitando información sobre Impulso Digital...')" class="mt-4 bg-gray-50 hover:bg-blue-600 hover:text-white text-xs text-blue-600 font-semibold py-2 px-4 rounded-xl transition-all self-start">
+                                Cotizar Servicio
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            `,
+            'StackTecnológico': `
+                <div class="group">
+                    <span class="text-xs text-gray-500">https://luizabeth.dev &gt; stack &gt; herramientas-desarrollo</span>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-2">
+                        <a href="#" onclick="showToast('Explorando mi Stack Tecnológico...'); return false;">Kit de Herramientas Digitales y Tecnologías de Programación</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light mb-6">
+                        Tecnologías con las que construyo mundos digitales interactivos, adaptables y dinámicos a diario. Haz clic en cualquiera de ellas para conocer más detalles:
+                    </p>
+                    
+                    <!-- Grid de Tarjetas de Tecnologías (Tech Stack Grid Cards) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                        
+                        <!-- Tarjeta 1: HTML5 & CSS3 -->
+                        <div class="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-md hover:border-orange-100 transition-all group/card cursor-pointer" onclick="showToast('HTML5 & CSS3: Estructuración semántica y estilos avanzados responsivos.')">
+                            <div class="flex items-center space-x-3.5 mb-3">
+                                <div class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2L2 5l1.5 13.5L12 22l8.5-3.5L22 5zM17.5 16l-5.5 2.25L6.5 16V8h11z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-sm group-hover/card:text-blue-600 transition-colors">HTML5 & CSS3</h4>
+                                    <span class="text-[11px] text-gray-400">Maquetación Semántica</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 leading-relaxed font-light mb-4">
+                                Construcción de páginas web semánticas y adaptables, diseñadas meticulosamente para cualquier pantalla y optimizadas para SEO.
+                            </p>
+                            <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-orange-500 h-full rounded-full" style="width: 95%"></div>
+                            </div>
+                            <div class="flex justify-between text-[10px] text-gray-400 mt-1">
+                                <span>Dominio técnico</span>
+                                <span class="font-medium text-gray-600">Avanzado</span>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 2: JavaScript -->
+                        <div class="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-md hover:border-yellow-100 transition-all group/card cursor-pointer" onclick="showToast('JavaScript: Lógica del cliente, manipulación del DOM y APIs.')">
+                            <div class="flex items-center space-x-3.5 mb-3">
+                                <div class="w-10 h-10 rounded-xl bg-yellow-50 flex items-center justify-center text-yellow-600">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M3 3h18v18H3zm12.5 11.5c0 .8-.7 1.5-1.5 1.5H12v-1.5h2V13h-2v-4h3.5v1.5H14v1h1.5zm-5 1.5H7V14h2V9H7V7.5h3.5V14h1.5z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-sm group-hover/card:text-blue-600 transition-colors">JavaScript (ES6+)</h4>
+                                    <span class="text-[11px] text-gray-400">Interactividad y Lógica</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 leading-relaxed font-light mb-4">
+                                Creación de lógica interactiva, animaciones basadas en eventos, manipulación avanzada del DOM y consumo dinámico de APIs RESTful.
+                            </p>
+                            <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-yellow-500 h-full rounded-full" style="width: 88%"></div>
+                            </div>
+                            <div class="flex justify-between text-[10px] text-gray-400 mt-1">
+                                <span>Dominio técnico</span>
+                                <span class="font-medium text-gray-600">Experto</span>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 3: React.js -->
+                        <div class="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-md hover:border-sky-100 transition-all group/card cursor-pointer" onclick="showToast('React.js: Creación de componentes reutilizables y reactivos.')">
+                            <div class="flex items-center space-x-3.5 mb-3">
+                                <div class="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center text-sky-600">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                                        <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z" stroke-dasharray="2 2"/>
+                                        <ellipse cx="12" cy="12" rx="9" ry="3" transform="rotate(30,12,12)"/>
+                                        <ellipse cx="12" cy="12" rx="9" ry="3" transform="rotate(150,12,12)"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-sm group-hover/card:text-blue-600 transition-colors">React.js</h4>
+                                    <span class="text-[11px] text-gray-400">Framework Frontend</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 leading-relaxed font-light mb-4">
+                                Arquitectura de aplicaciones web SPA con componentes reutilizables, hooks eficientes y gestión fluida del estado local.
+                            </p>
+                            <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-sky-500 h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                            <div class="flex justify-between text-[10px] text-gray-400 mt-1">
+                                <span>Dominio técnico</span>
+                                <span class="font-medium text-gray-600">Avanzado</span>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 4: Tailwind CSS -->
+                        <div class="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-md hover:border-indigo-100 transition-all group/card cursor-pointer" onclick="showToast('Tailwind CSS: Maquetación atómica moderna y ultra rápida.')">
+                            <div class="flex items-center space-x-3.5 mb-3">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 3v18M3 12h18M12 3l9 9-9 9-9-9z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-sm group-hover/card:text-blue-600 transition-colors">Tailwind CSS</h4>
+                                    <span class="text-[11px] text-gray-400">Utility-First Framework</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 leading-relaxed font-light mb-4">
+                                Estilización ágil sin salir del HTML. Uso de componentes adaptativos, animaciones fluidas y optimización completa de tamaño CSS final.
+                            </p>
+                            <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-indigo-500 h-full rounded-full" style="width: 92%"></div>
+                            </div>
+                            <div class="flex justify-between text-[10px] text-gray-400 mt-1">
+                                <span>Dominio técnico</span>
+                                <span class="font-medium text-gray-600">Avanzado</span>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 5: Figma & Canva -->
+                        <div class="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-md hover:border-purple-100 transition-all group/card cursor-pointer" onclick="showToast('Figma & Canva: Prototipado UX/UI y diseño de recursos visuales.')">
+                            <div class="flex items-center space-x-3.5 mb-3">
+                                <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path d="M12 22a5 5 0 11-5-5h5v5zm0-5a5 5 0 110-10h5v10h-5z"/>
+                                        <circle cx="9.5" cy="4.5" r="2.5"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-sm group-hover/card:text-blue-600 transition-colors">Figma & Canva</h4>
+                                    <span class="text-[11px] text-gray-400">Diseño UX/UI & Visual</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 leading-relaxed font-light mb-4">
+                                Creación de prototipos visuales de fidelidad extrema, sistemas de diseño estructurados y activos gráficos vectoriales listos para producción.
+                            </p>
+                            <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-purple-500 h-full rounded-full" style="width: 90%"></div>
+                            </div>
+                            <div class="flex justify-between text-[10px] text-gray-400 mt-1">
+                                <span>Dominio técnico</span>
+                                <span class="font-medium text-gray-600">Avanzado</span>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 6: Git & GitHub -->
+                        <div class="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-md hover:border-slate-150 transition-all group/card cursor-pointer" onclick="showToast('Git & GitHub: Control de versiones de código y despliegue continuo.')">
+                            <div class="flex items-center space-x-3.5 mb-3">
+                                <div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-700">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-sm group-hover/card:text-blue-600 transition-colors">Git & GitHub</h4>
+                                    <span class="text-[11px] text-gray-400">Control de Versiones</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 leading-relaxed font-light mb-4">
+                                Colaboración en equipos de programación mediante ramas, resolución de conflictos, subida de proyectos y automatización con GitHub Pages.
+                            </p>
+                            <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-slate-700 h-full rounded-full" style="width: 80%"></div>
+                            </div>
+                            <div class="flex justify-between text-[10px] text-gray-400 mt-1">
+                                <span>Dominio técnico</span>
+                                <span class="font-medium text-gray-600">Intermedio</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            `,
+            'ProcesodeTrabajo': `
+                <div class="group mb-4">
+                    <span class="text-xs text-gray-500">https://luizabeth.dev &gt; proceso &gt; hoja-de-calculo</span>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-4">
+                        <a href="#" onclick="showToast('Abriendo hoja de procesos...'); return false;">Diagrama de Control de Procesos de Luizabeth (Simulador de Excel)</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light mb-6">
+                        Para asegurar la máxima transparencia, utilizo esta hoja de cálculo integrada donde detallo la distribución de horas reales estimadas y estados para mis flujos de Python, Freelance y Bolsa:
+                    </p>
+
+                    <!-- HOJA DE EXCEL EMBEDDED DENTRO DEL GOOGLE CLONE -->
+                    <div class="bg-white rounded-xl shadow-md border border-slate-300 overflow-hidden flex flex-col my-6 select-none max-w-full text-slate-800">
+                        <!-- Barra superior de Excel (Título del archivo) -->
+                        <div class="bg-emerald-800 text-white px-4 py-2 flex items-center justify-between text-xs font-medium">
+                            <div class="flex items-center space-x-2">
+                                <span class="tracking-wide font-semibold">Procesos_Luizabeth_Contreras.xlsx</span>
+                            </div>
+                            <div class="flex items-center space-x-2 text-emerald-100">
+                                <span class="bg-emerald-700 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-emerald-300">Modo Edición</span>
+                                <div class="h-2 w-2 rounded-full bg-emerald-400"></div>
+                            </div>
+                        </div>
+
+                        <!-- Barra de menú rápida de Excel -->
+                        <div class="bg-slate-100 border-b border-slate-300 p-2 flex flex-wrap items-center gap-3 text-xs text-slate-700">
+                            <!-- Fuente -->
+                            <div class="flex items-center space-x-1 border-r border-slate-300 pr-3">
+                                <span class="font-bold text-[11px] text-slate-500">Calibri</span>
+                                <span class="text-slate-400">|</span>
+                                <span class="font-bold text-[11px] text-slate-500">11</span>
+                            </div>
+
+                            <!-- Estilos texto -->
+                            <div class="flex items-center space-x-2 border-r border-slate-300 pr-3">
+                                <button id="bold-btn" class="font-bold hover:text-emerald-600" title="Negrita">N</button>
+                                <button id="italic-btn" class="italic hover:text-emerald-600" title="Cursiva">K</button>
+                                <button id="underline-btn" class="underline hover:text-emerald-600" title="Subrayado">S</button>
+                            </div>
+
+                            <!-- f(x) Formula Display -->
+                            <div class="flex items-center space-x-1 text-slate-500 italic font-serif pl-2">
+                                <span class="text-xs">fx:</span>
+                                <input id="formula-bar-input" type="text" readonly class="bg-slate-50 border border-slate-200 rounded px-2 py-0.5 text-xs font-mono text-slate-700 w-52" value="=SUMA(D3:D7)">
+                            </div>
+                        </div>
+
+                        <!-- Tabla Excel -->
+                        <div class="overflow-x-auto">
+                            <table class="w-full border-collapse table-fixed text-[12px] min-w-[650px]">
+                                <thead>
+                                    <tr class="bg-slate-100 text-slate-500">
+                                        <th class="w-10 border border-slate-300 text-center py-1 text-[10px] bg-slate-200"></th>
+                                        <th class="w-16 border border-slate-300 text-center py-1 text-[10px] bg-slate-200">A</th>
+                                        <th class="w-48 border border-slate-300 text-center py-1 text-[10px] bg-slate-200">B</th>
+                                        <th class="w-80 border border-slate-300 text-center py-1 text-[10px] bg-slate-200">C</th>
+                                        <th class="w-24 border border-slate-300 text-center py-1 text-[10px] bg-slate-200">D</th>
+                                        <th class="w-28 border border-slate-300 text-center py-1 text-[10px] bg-slate-200">E</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="excel-body">
+                                    <!-- Se puebla mediante Javascript -->
+                                </tbody>
+                                <tfoot>
+                                    <tr class="font-bold text-slate-950 bg-emerald-50">
+                                        <td class="border border-slate-300 bg-slate-100 text-[10px] text-center">9</td>
+                                        <td class="border border-slate-300 px-3 py-2 text-center"></td>
+                                        <td colspan="2" class="border border-slate-300 px-3 py-2 text-right text-emerald-900">Total Horas Estimadas (Cálculo Automático)</td>
+                                        <td id="excel-total-cell" class="border border-slate-300 px-3 py-2 text-center text-emerald-700 font-extrabold bg-emerald-100">62</td>
+                                        <td class="border border-slate-300 px-3 py-2 text-center text-emerald-800 text-[10px]">
+                                            <span class="bg-emerald-200 px-2 py-0.5 rounded-full font-bold uppercase">Listo</span>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                        <!-- Pestañas de la Hoja -->
+                        <div class="bg-slate-100 border-t border-slate-300 p-1.5 flex items-center justify-between text-[11px] font-semibold">
+                            <div class="flex items-center space-x-1">
+                                <button id="sheet-python-btn" onclick="switchExcelSheet('python')" class="px-3 py-1 bg-white border border-slate-300 border-b-white rounded-t-md text-emerald-700 flex items-center space-x-1 shadow-sm">
+                                    <span>Python</span>
+                                </button>
+                                <button id="sheet-freelance-btn" onclick="switchExcelSheet('freelance')" class="px-3 py-1 bg-slate-200/50 text-slate-600 border border-transparent rounded-t-md flex items-center space-x-1">
+                                    <span>Freelance</span>
+                                </button>
+                                <button id="sheet-bolsa-btn" onclick="switchExcelSheet('bolsa')" class="px-3 py-1 bg-slate-200/50 text-slate-600 border border-transparent rounded-t-md flex items-center space-x-1">
+                                    <span>Bolsa</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+            'Blog': `
+                <div class="group mb-8">
+                    <span class="text-xs text-gray-500">https://luizabeth.dev &gt; blog &gt; articulos</span>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-4">
+                        <a href="#" onclick="showToast('Explorando mi Blog...'); return false;">Artículos Destacados, Metas y Recuerdos</a>
+                    </h3>
+
+                    <!-- CARRUSEL DE IMÁGENES INTERACTIVO Y RECUERDOS (ESTILIZADOS) -->
+                    <div class="relative w-full max-w-2xl mx-auto rounded-3xl overflow-hidden border border-slate-200 shadow-lg bg-slate-50 mb-8 select-none">
+                        <!-- Wrapper para los slides -->
+                        <div class="relative w-full overflow-hidden aspect-[16/10]">
+                            
+                            <!-- Slide 1: Cumpleaños Pastel Amarillo y Lila (Inspirado en la imagen) -->
+                            <div id="carousel-slide-0" class="carousel-slide absolute inset-0 bg-[#fff8b8] flex flex-col justify-between p-6 sm:p-10 transition-opacity duration-500">
+                                <!-- Estrellas decorativas lilas (SVG recreado) -->
+                                <div class="absolute inset-0 opacity-45 pointer-events-none">
+                                    <svg class="w-full h-full" viewBox="0 0 100 100">
+                                        <polygon points="12,5 14,9 18,10 15,13 16,17 12,15 8,17 9,13 6,10 10,9" fill="#aa88ff"/>
+                                        <polygon points="85,12 87,16 91,17 88,20 89,24 85,22 81,24 82,20 79,17 83,16" fill="#aa88ff"/>
+                                        <polygon points="20,70 23,76 30,77 25,81 26,87 20,84 14,87 15,81 10,77 17,76" fill="#aa88ff"/>
+                                        <polygon points="75,75 77,79 81,80 78,83 79,87 75,85 71,87 72,83 69,80 73,79" fill="#aa88ff"/>
+                                    </svg>
+                                </div>
+                                
+                                <div class="flex justify-between items-center z-10 text-slate-800 font-bold text-xs uppercase tracking-widest">
+                                    <span>Enero 16</span>
+                                    <span>2026</span>
+                                </div>
+
+                                <div class="text-center z-10 flex flex-col items-center my-auto space-y-4">
+                                    <!-- TODAY'S Badge Oval -->
+                                    <div class="bg-[#9966ff] text-white font-extrabold text-2xl sm:text-4xl px-8 py-2.5 rounded-full shadow-md tracking-wider border-2 border-white">
+                                        TODAY'S
+                                    </div>
+                                    <!-- MY BIRTHDAY! Banner -->
+                                    <div class="bg-[#9966ff]/20 text-[#8833ff] border-2 border-[#9966ff]/40 font-extrabold text-sm sm:text-lg px-6 py-1.5 rounded-md uppercase tracking-widest">
+                                        ★ MY BIRTHDAY! ★
+                                    </div>
+                                    <div class="pt-2 text-[#9966ff] font-extrabold text-lg sm:text-2xl tracking-wide uppercase drop-shadow-xs">
+                                        🥳 Luizabeth celebra sus 15 años 💗
+                                    </div>
+                                </div>
+
+                                <div class="text-center text-[10px] text-slate-500 font-semibold tracking-widest uppercase z-10">
+                                    Luizabeth's Personal Blog
+                                </div>
+                            </div>
+
+                            <!-- Slide 2: Lógica de Programación (Fondo Oscuro con código) -->
+                            <div id="carousel-slide-1" class="carousel-slide absolute inset-0 bg-slate-900 flex flex-col justify-between p-6 sm:p-10 transition-opacity duration-500 hidden">
+                                <div class="flex justify-between items-center text-slate-500 font-mono text-[10px]">
+                                    <span>python_learning.py</span>
+                                    <span>MODO: EXPERTO</span>
+                                </div>
+                                <div class="my-auto font-mono text-left space-y-2 text-xs text-emerald-400 pl-4 border-l-2 border-emerald-500">
+                                    <span class="text-slate-500"># Creando cosas a partir de un código</span><br>
+                                    <span>class Desarrolladora:</span><br>
+                                    <span class="pl-4">def __init__(self, nombre, edad):</span><br>
+                                    <span class="pl-8">self.nombre = "Luizabeth"</span><br>
+                                    <span class="pl-8">self.edad = 15</span><br>
+                                    <span class="pl-8">self.pasion = "Crear soluciones con código"</span>
+                                </div>
+                                <div class="text-center text-[10px] text-slate-500 font-mono tracking-widest uppercase">
+                                    SKILIO CERTIFIED DEVELOPMENT
+                                </div>
+                            </div>
+
+                            <!-- Slide 3: Diseño UI/UX Creativo (Fondo Pastel con Paletas) -->
+                            <div id="carousel-slide-2" class="carousel-slide absolute inset-0 bg-[#fff5f5] flex flex-col justify-between p-6 sm:p-10 transition-opacity duration-500 hidden">
+                                <div class="flex justify-between items-center text-pink-600 font-bold text-xs uppercase tracking-widest">
+                                    <span>Creative Portfolio</span>
+                                    <span>UI/UX & Figma</span>
+                                </div>
+                                <div class="text-center my-auto flex flex-col items-center space-y-4">
+                                    <span class="text-poster text-3xl sm:text-4xl text-pink-600 leading-none">Magia & Interfaces</span>
+                                    <p class="text-slate-600 text-xs sm:text-sm font-light max-w-md">
+                                        "Diseñar es como hacer magia. Elegimos los colores perfectos, acomodamos los elementos y logramos que todo sea hermoso y accesible para todos."
+                                    </p>
+                                    <div class="flex space-x-1.5">
+                                        <span class="w-4 h-4 rounded-full bg-yellow-300 border border-yellow-400"></span>
+                                        <span class="w-4 h-4 rounded-full bg-pink-400 border border-pink-500"></span>
+                                        <span class="w-4 h-4 rounded-full bg-purple-400 border border-purple-500"></span>
+                                        <span class="w-4 h-4 rounded-full bg-emerald-400 border border-emerald-500"></span>
+                                    </div>
+                                </div>
+                                <div class="text-center text-[10px] text-pink-400 font-semibold tracking-widest uppercase">
+                                    LUY DESIGN LAB
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Botones de Control del Carrusel -->
+                        <button onclick="changeCarouselSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-slate-800 p-2.5 rounded-full shadow border border-slate-200 transition-all focus:outline-none" title="Anterior">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                        </button>
+                        <button onclick="changeCarouselSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-slate-800 p-2.5 rounded-full shadow border border-slate-200 transition-all focus:outline-none" title="Siguiente">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- SECCIÓN DE LISTAS: METAS ALCANZADAS Y SUEÑOS FUTUROS -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+                        
+                        <!-- Lista de Metas Alcanzadas (🏆) -->
+                        <div class="bg-emerald-50/50 border border-emerald-100 rounded-3xl p-6 sm:p-8">
+                            <h4 class="text-base font-bold text-emerald-800 mb-4 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                Metas Alcanzadas (Mis Logros 🏆)
+                            </h4>
+                            <ul class="space-y-3.5 text-xs sm:text-sm text-slate-700 leading-relaxed font-light">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-500 font-bold">✓</span>
+                                    <span><strong>Aprender Python desde cero:</strong> Completar con éxito mi formación inicial y comprender la lógica de código.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-500 font-bold">✓</span>
+                                    <span><strong>Certificarme en Skilio:</strong> Obtener avales profesionales en Python, Freelance y Bolsa de Valores bajo la tutela de Adrián Sáenz.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-500 font-bold">✓</span>
+                                    <span><strong>Crear mi propio Portfolio interactivo:</strong> Diseñar de punta a punta este ecosistema interactivo a mis 15 años.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-500 font-bold">✓</span>
+                                    <span><strong>Adoptar Inteligencia Artificial:</strong> Integrar herramientas de IA para impulsar mi velocidad y expandir mis capacidades de desarrollo.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Lista de Deseos Futuros (🌟) -->
+                        <div class="bg-purple-50/50 border border-purple-100 rounded-3xl p-6 sm:p-8">
+                            <h4 class="text-base font-bold text-purple-800 mb-4 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.9 1.519-.9 1.818 0l1.248 3.805a1 1 0 00.95.69h4.015c.969 0 1.371 1.24.588 1.81l-3.247 2.47a1 1 0 00-.363 1.118l1.248 3.805c.3.9-.755 1.69-1.54 1.11l-3.247-2.47a1 1 0 00-1.118 0l-3.247 2.47c-.785.58-1.541-.21-1.54-1.11l1.248-3.805a1 1 0 00-.363-1.118l-3.247-2.47c-.783-.57-.38-1.81.588-1.81h4.014a1 1 0 00.951-.69l1.248-3.805z"/>
+                                </svg>
+                                Lista de Deseos (Sueños Futuros 🌟)
+                            </h4>
+                            <ul class="space-y-3.5 text-xs sm:text-sm text-slate-700 leading-relaxed font-light">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-purple-500 font-bold">★</span>
+                                    <span><strong>Cumplir 18 años y lanzar un SaaS:</strong> Diseñar y programar mi propia herramienta web comercial completamente autónoma.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-purple-500 font-bold">★</span>
+                                    <span><strong>Llegar a más personas:</strong> Crecer mi blog personal y compartir tutoriales divertidos de código en TikTok y YouTube.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-purple-500 font-bold">★</span>
+                                    <span><strong>Dominar React Native:</strong> Aprender desarrollo nativo móvil para crear aplicaciones de alta fidelidad para Android e iOS.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-purple-500 font-bold">★</span>
+                                    <span><strong>Viajar trabajando:</strong> Lograr la independencia freelance para llevar mi computadora y programar desde cualquier rincón del mundo.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="group">
+                    <span class="text-xs text-gray-500">Publicado: 28 de Abril, 2026</span>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
+                        <a href="#" onclick="showToast('Leyendo: La psicología del color...'); return false;">La psicología del color en el diseño de interfaces moderno</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                        Un análisis sobre cómo los esquemas de color de marcas líderes como Google guían el comportamiento del usuario y mejoran la legibilidad visual de los textos.
+                    </p>
+                </div>
+            `
+        };
+
+        // Excel static datasets
+        const excelData = {
+            python: [
+                { id: "1", etapa: "Definición de Lógica", desc: "Creación de flujos de código, algoritmos lógicos complejos y scripts modulares.", horas: 12, estado: "Listo" },
+                { id: "2", etapa: "Integración de API", desc: "Conexión de APIs dinámicas de inteligencia artificial para automatizar flujos.", horas: 15, estado: "Listo" },
+                { id: "3", etapa: "Estructuras de Datos", desc: "Gestión avanzada de colecciones semánticas de información en JSON/BBDD.", horas: 20, estado: "Listo" },
+                { id: "4", etapa: "QA e Implementación", desc: "Depuración de excepciones lógicas bajo directrices PEP 8 y optimización de carga.", horas: 15, estado: "Listo" }
+            ],
+            freelance: [
+                { id: "1", etapa: "Fase de Negociación", desc: "Briefing comercial inicial con el cliente para estipular horas y entregables.", horas: 8, estado: "Listo" },
+                { id: "2", etapa: "Presupuestos Formales", desc: "Desglose por hitos y contratos de confidencialidad para relaciones sanas.", horas: 10, estado: "Listo" },
+                { id: "3", etapa: "Despliegue y Pruebas", desc: "Firma, entrega técnica y soporte de puesta en marcha del software.", horas: 18, estado: "Listo" }
+            ],
+            bolsa: [
+                { id: "1", etapa: "Evaluación de Perfil", desc: "Análisis técnico de riesgos y objetivos financieros.", horas: 6, estado: "Listo" },
+                { id: "2", etapa: "Investigación Bursátil", desc: "Análisis fundamental de empresas y fondos cotizados.", horas: 14, estado: "Listo" },
+                { id: "3", etapa: "Balance del Portafolio", desc: "Diversificación activa y monitoreo continuo de variación de precios.", horas: 12, estado: "Listo" }
+            ]
+        };
+
+        let currentExcelSheet = 'python';
+
+        // Helper to render the excel spreadsheet elements inside the Process tab
+        function renderExcelSimulator() {
+            const body = document.getElementById('excel-body');
+            const totalCell = document.getElementById('excel-total-cell');
+            if (!body) return; // Prevent issues if not in Processes tab
+
+            const data = excelData[currentExcelSheet];
+            let html = '';
+            let totalHoras = 0;
+
+            data.forEach((p, idx) => {
+                const row = idx + 3;
+                totalHoras += p.horas;
+                html += `
+                    <tr class="h-8 text-slate-800">
+                        <td class="border border-slate-300 bg-slate-100 text-slate-500 font-semibold text-center select-none">${row}</td>
+                        <td class="border border-slate-300 px-2 py-1 text-center font-bold text-slate-400">P${p.id}</td>
+                        <td class="border border-slate-300 px-3 py-1 font-semibold">${p.etapa}</td>
+                        <td class="border border-slate-300 px-3 py-1 text-slate-600">${p.desc}</td>
+                        <td class="border border-slate-300 px-3 py-1 text-center font-bold text-emerald-700 font-mono">${p.horas}</td>
+                        <td class="border border-slate-300 px-3 py-1 text-center">
+                            <span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold text-[10px] uppercase">${p.estado}</span>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            // Fill with empty lines to mimic a real Sheet (up to row 8)
+            for (let i = data.length + 3; i <= 8; i++) {
+                html += `
+                    <tr class="h-8">
+                        <td class="border border-slate-300 bg-slate-100 text-slate-500 font-semibold text-center select-none">${i}</td>
+                        <td class="border border-slate-300 px-2 py-1"></td>
+                        <td class="border border-slate-300 px-3 py-1"></td>
+                        <td class="border border-slate-300 px-3 py-1"></td>
+                        <td class="border border-slate-300 px-3 py-1"></td>
+                        <td class="border border-slate-300 px-3 py-1"></td>
+                    </tr>
+                `;
+            }
+
+            body.innerHTML = html;
+            totalCell.innerText = totalHoras;
+        }
+
+        // Action when user changes sheet tab in Excel
+        function switchExcelSheet(sheetName) {
+            currentExcelSheet = sheetName;
+            
+            // Adjust styles of Excel buttons
+            const buttons = {
+                python: document.getElementById('sheet-python-btn'),
+                freelance: document.getElementById('sheet-freelance-btn'),
+                bolsa: document.getElementById('sheet-bolsa-btn')
+            };
+
+            for (const key in buttons) {
+                if (buttons[key]) {
+                    if (key === sheetName) {
+                        buttons[key].className = "px-3 py-1 bg-white border border-slate-300 border-b-white rounded-t-md text-emerald-700 flex items-center space-x-1 shadow-sm";
+                    } else {
+                        buttons[key].className = "px-3 py-1 bg-slate-200/50 text-slate-600 border border-transparent rounded-t-md flex items-center space-x-1";
+                    }
+                }
+            }
+
+            renderExcelSimulator();
+            
+            // Show formula inside formula bar
+            const formulaBar = document.getElementById('formula-bar-input');
+            if (formulaBar) {
+                const len = excelData[sheetName].length;
+                formulaBar.value = `=SUMA(D3:D${len + 2})`;
+            }
+        }
+
+        // Active tab states
+        let currentTab = 'Todo';
+
+        // Render current search results based on routing state
+        function renderDatabaseResults() {
+            const container = document.getElementById('results-container');
+            container.innerHTML = searchDatabase[currentTab] || '';
+            
+            // Adjust search stats text based on tab
+            const countResults = {
+                'Todo': 9, 'Proyectos': 6, 'Estudios': 3, 'Contacto': 1, 'SobreMí': 3, 'Servicios': 5, 'StackTecnológico': 1, 'ProcesodeTrabajo': 2, 'Blog': 2
+            };
+            const currentCount = countResults[currentTab] || 1;
+            document.getElementById('search-stats').textContent = `Aproximadamente ${currentCount} resultados destacados (0.02 segundos)`;
+
+            // DYNAMIC HIDING OF RELATED SEARCHES: Only show when tab is "Todo"
+            const relatedSection = document.getElementById('related-searches-section');
+            if (currentTab === 'Todo') {
+                relatedSection.style.display = 'block';
+            } else {
+                relatedSection.style.display = 'none';
+            }
+
+            // If we navigated to Work Processes, initialize Excel render immediately
+            if (currentTab === 'ProcesodeTrabajo') {
+                renderExcelSimulator();
+            }
+
+            // If we navigated to Blog, initialize Carousel
+            if (currentTab === 'Blog') {
+                currentCarouselSlideIndex = 0;
+                updateCarouselView();
+            }
+        }
+
+        // CAROUSEL LOGIC
+        let currentCarouselSlideIndex = 0;
+        const totalCarouselSlides = 3;
+
+        function updateCarouselView() {
+            for (let i = 0; i < totalCarouselSlides; i++) {
+                const slide = document.getElementById('carousel-slide-' + i);
+                if (slide) {
+                    if (i === currentCarouselSlideIndex) {
+                        slide.classList.remove('hidden');
+                    } else {
+                        slide.classList.add('hidden');
+                    }
+                }
+            }
+        }
+
+        function changeCarouselSlide(direction) {
+            currentCarouselSlideIndex += direction;
+            if (currentCarouselSlideIndex >= totalCarouselSlides) {
+                currentCarouselSlideIndex = 0;
+            } else if (currentCarouselSlideIndex < 0) {
+                currentCarouselSlideIndex = totalCarouselSlides - 1;
+            }
+            updateCarouselView();
+        }
+
+        // Handle navigation to specified tab
+        function navigateToTab(tabId) {
+            const formattedTabId = 'tab-' + tabId;
+            const tabButton = document.getElementById(formattedTabId);
+            if (tabButton) {
+                setActiveTab(tabButton);
+            }
+        }
+
+        // Active Tabs styling toggle & router action
+        function setActiveTab(button) {
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('border-blue-500', 'text-blue-600', 'font-medium', 'font-semibold');
+                tab.classList.add('border-transparent');
+            });
+            button.classList.remove('border-transparent');
+            button.classList.add('border-blue-500', 'text-blue-600', 'font-medium', 'font-semibold');
+            
+            // Get tab name (removing spaces for key mapping)
+            const tabName = button.id.replace('tab-', '');
+            currentTab = tabName;
+            
+            // Auto update search filter text in input depending on clicked tab
+            if (tabName !== 'Todo') {
+                updateSearchText(button.textContent.trim());
+            } else {
+                updateSearchText('proyectos de programación');
+            }
+
+            renderDatabaseResults();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Routing from related search buttons
+        function handleRelatedSearch(searchText, targetTab) {
+            updateSearchText(searchText);
+            navigateToTab(targetTab);
+            showToast(`Redirigiendo a la sección de: ${targetTab}`);
+        }
+
+        // Update search text from external links
+        function updateSearchText(val) {
+            const input = document.getElementById('search-input');
+            input.value = val;
+            document.title = val + ' - Buscar con Luizabeth';
+            document.getElementById('current-filter-badge').textContent = val;
+        }
+
+        // Clear search input
+        function clearSearch() {
+            const input = document.getElementById('search-input');
+            input.value = '';
+            input.focus();
+        }
+
+        // Reset search to original state
+        function resetSearch() {
+            navigateToTab('Todo');
+        }
+
+        // Form Submission logic
+        function handleSearchSubmit(event) {
+            event.preventDefault();
+            const val = document.getElementById('search-input').value;
+            if (val.trim()) {
+                document.title = val + ' - Buscar con Luizabeth';
+                document.getElementById('current-filter-badge').textContent = val;
+                showToast(`Filtrando búsqueda: "${val}"`);
+            }
+        }
+
+        // Toast Notification System
+        function showToast(message) {
+            const toast = document.getElementById('custom-toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = message;
+            
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Contact simulated submission handler
+        function submitFormSimulated(event) {
+            event.preventDefault();
+            showToast('¡Tu propuesta de negocio ha sido registrada con éxito! 🎉');
+            event.target.reset();
+        }
+
+        // Voice Search Modal Handlers
+        function openVoiceSearch() {
+            const modal = document.getElementById('voice-modal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            // Simulate voice recognition close after 4s
+            setTimeout(() => {
+                closeVoiceSearch();
+            }, 4000);
+        }
+        function closeVoiceSearch() {
+            const modal = document.getElementById('voice-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        // Lens Search Modal Handlers
+        function openLensSearch() {
+            const modal = document.getElementById('lens-modal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+        function closeLensSearch() {
+            const modal = document.getElementById('lens-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        // INTERACTIVE MODAL ACTIONS (FOOTER)
+        function openFooterModal(modalKey) {
+            const modal = document.getElementById('modal-' + modalKey);
+            if (modal) {
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+            }
+        }
+        function closeFooterModal(modalKey) {
+            const modal = document.getElementById('modal-' + modalKey);
+            if (modal) {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        // Initialize Results
+        window.onload = function() {
+            renderDatabaseResults();
+        };
+    </script>
+</body>
+</html>
