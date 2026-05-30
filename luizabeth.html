@@ -73,6 +73,17 @@
             opacity: 0.85;
         }
 
+        /* CSS-only Yellow Chess Checkerboard Background (Aesthetic Wallpapers_ Disney Beauty and Beast Belle Yellow) */
+        .bg-checkerboard-yellow {
+            background-color: #fffde6; /* Amarillo súper clarito */
+            background-image: 
+                linear-gradient(45deg, #fce06d 25%, transparent 25%, transparent 75%, #fce06d 75%, #fce06d), 
+                linear-gradient(45deg, #fce06d 25%, transparent 25%, transparent 75%, #fce06d 75%, #fce06d);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+            opacity: 0.9;
+        }
+
         /* CSS-only Pastel Star Pattern Background (Fondo de estrellas amarillas sobre fondo rosa pastel - dhhfjd.png) */
         .bg-stars-pink {
             background-color: #df6d91; /* Rosa base similar a la imagen */
@@ -178,7 +189,7 @@
                 </button>
 
                 <!-- Proyectos -->
-                <button id="tab-Proyectos" onclick="setActiveTab(this)" class="nav-tab py-3 px-1 border-b-[3px] border-transparent hover:text-gray-900 flex items-center gap-1.5 transition-all">
+                <button id="tab-Proyectos" onclick="setActiveTab(this)" class="nav-tab py-3 px-1 border-b-[3px] border-transparent hover:text-gray-900 flex items-center gap-1.5 transition-all font-semibold">
                     Proyectos
                 </button>
 
@@ -203,7 +214,7 @@
                 </button>
 
                 <!-- Stack Tecnológico -->
-                <button id="tab-StackTecnológico" onclick="setActiveTab(this)" class="nav-tab py-3 px-1 border-b-[3px] border-transparent hover:text-gray-900 flex items-center gap-1.5 transition-all">
+                <button id="tab-StackTecnológico" onclick="setActiveTab(this)" class="nav-tab py-3 px-1 border-b-[3px] border-transparent hover:text-gray-900 flex items-center gap-1.5 transition-all font-semibold">
                     Stack Tecnológico
                 </button>
 
@@ -273,7 +284,7 @@
                 <div onclick="handleRelatedSearch('contacto luizabeth dev', 'Contacto')" class="flex items-center space-x-4.5 p-4 bg-gray-50 rounded-2xl hover:bg-gray-100/80 cursor-pointer transition-all border border-gray-100">
                     <div class="p-2 bg-white rounded-full shadow-xs text-gray-500">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
                     </div>
                     <span class="text-[15px] font-medium text-gray-800">contacto luizabeth dev</span>
@@ -286,7 +297,7 @@
     <footer class="bg-[#f2f2f2] text-sm text-[#70757a] border-t border-gray-200 mt-12">
         <!-- Location details -->
         <div class="px-4 md:px-10 lg:px-16 py-3 border-b border-gray-300 flex items-center space-x-2">
-            <span class="w-2 h-2 rounded-full bg-gray-400"></span>
+            <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
             <span class="font-normal text-gray-600">Venezuela</span>
             <span class="text-xs text-gray-400">• Basado en tu actividad anterior</span>
         </div>
@@ -538,10 +549,10 @@
                         </div>
                     </div>
                     <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
-                        <a href="#" onclick="navigateToTab('Proyectos'); return false;">Mis Proyectos de Desarrollo Web y Aplicaciones</a>
+                        <a href="#" onclick="navigateToTab('Proyectos'); return false;">Mis Proyectos de Desarrollo Web, Aplicaciones y Juegos Interactivos</a>
                     </h3>
                     <p class="text-[14px] google-dark-gray leading-relaxed font-light">
-                        Explora mi colección de proyectos interactivos creados con tecnologías modernas. Incluye aplicaciones web completas, juegos en canvas y diseños web responsivos de alta fidelidad.
+                        Explora mi colección de proyectos interactivos creados con tecnologías modernas. Incluye aplicaciones web completas, juegos interactivos de adivinanza (libros y música) y diseños web responsivos de alta fidelidad.
                     </p>
                 </div>
 
@@ -555,10 +566,10 @@
                         </div>
                     </div>
                     <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
-                        <a href="#" onclick="navigateToTab('Estudios'); return false;">Estudios Académicos y Formación Tecnológica Continua</a>
+                        <a href="#" onclick="navigateToTab('Estudios'); return false;">Estudios Académicos, Certificados de Skilio y Formación Secundaria</a>
                     </h3>
                     <p class="text-[14px] google-dark-gray leading-relaxed font-light">
-                        Mi trayectoria educativa, cursos certificados en desarrollo de software, diseño interactivo y algoritmos informáticos para construir soluciones digitales seguras y eficientes.
+                        Mi trayectoria educativa, mi colegio de formación y mis cursos certificados de Skilio en Python, Freelance y Bolsa de Valores para construir soluciones digitales sólidas y eficientes.
                     </p>
                 </div>
 
@@ -580,7 +591,69 @@
                 </div>
             `,
             'Proyectos': `
-                <!-- Proyecto 1 -->
+                <!-- NUEVO PROYECTO 1: JUEGO DE ADIVINAR EL LIBRO -->
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-indigo-150 rounded-2xl p-6 shadow-xs mb-6 group/game">
+                    <div class="flex items-center space-x-2 text-xs text-indigo-600 font-bold uppercase tracking-wider mb-2">
+                        <span class="bg-indigo-100 px-2 py-0.5 rounded">Proyecto Destacado</span>
+                        <span>•</span>
+                        <span>Juego Interactivo</span>
+                    </div>
+                    <h3 class="text-[20px] font-bold text-indigo-950 mb-2">Adivina el Libro 📚</h3>
+                    <p class="text-sm text-slate-600 font-light mb-4">
+                        Ponte a prueba con este juego interactivo de adivinar títulos de la literatura juvenil y clásica. ¡Consigue la puntuación más alta!
+                    </p>
+                    
+                    <!-- Contenedor del Juego de Libros -->
+                    <div class="bg-white rounded-xl p-4 sm:p-5 border border-slate-200">
+                        <div class="flex justify-between items-center mb-4 text-xs font-bold text-indigo-900 border-b border-slate-100 pb-2">
+                            <span id="book-score-label">PUNTOS: <span class="text-indigo-600" id="book-score">0</span></span>
+                            <span id="book-round-label">PREGUNTA: <span id="book-round">1/5</span></span>
+                        </div>
+                        <div class="min-h-[70px] flex items-center justify-center text-center bg-slate-50 rounded-lg p-3 mb-4 border border-slate-100">
+                            <p id="book-clue" class="text-sm text-slate-700 italic font-medium">Cargando juego...</p>
+                        </div>
+                        <div id="book-options" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <!-- Opciones inyectadas por JS -->
+                        </div>
+                        <div class="flex justify-between items-center mt-4 pt-3 border-t border-slate-100">
+                            <button onclick="resetBookGame()" class="text-xs text-indigo-600 hover:text-indigo-800 font-semibold uppercase tracking-wider focus:outline-none">Reiniciar</button>
+                            <span id="book-feedback" class="text-xs font-bold"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NUEVO PROYECTO 2: JUEGO DE ADIVINAR EL ARTISTA / MÚSICA (CON FONDO AMARILLO CHECKERBOARD RETRO) -->
+                <div class="bg-checkerboard-yellow border border-yellow-200 rounded-2xl p-6 shadow-xs mb-8 group/game relative overflow-hidden">
+                    <div class="flex items-center space-x-2 text-xs text-yellow-800 font-bold uppercase tracking-wider mb-2 relative z-10">
+                        <span class="bg-yellow-200/90 px-2 py-0.5 rounded">Aesthetic Game</span>
+                        <span>•</span>
+                        <span>Música & Artistas</span>
+                    </div>
+                    <h3 class="text-[20px] font-bold text-yellow-950 mb-2 relative z-10 font-serif">Adivina el Artista de Música 🎵</h3>
+                    <p class="text-sm text-yellow-900/90 font-light mb-4 relative z-10">
+                        Adivina el cantante o banda según las pistas de sus temas más famosos. ¡Diviértete con este diseño retro de tablero de ajedrez pastel!
+                    </p>
+                    
+                    <!-- Contenedor del Juego de Música -->
+                    <div class="bg-white/95 backdrop-blur-md rounded-xl p-4 sm:p-5 border border-yellow-300 relative z-10">
+                        <div class="flex justify-between items-center mb-4 text-xs font-bold text-yellow-900 border-b border-yellow-100 pb-2">
+                            <span>PUNTOS: <span class="text-yellow-600" id="music-score">0</span></span>
+                            <span>PREGUNTA: <span id="music-round">1/5</span></span>
+                        </div>
+                        <div class="min-h-[70px] flex items-center justify-center text-center bg-yellow-50/50 rounded-lg p-3 mb-4 border border-yellow-100">
+                            <p id="music-clue" class="text-sm text-yellow-950 italic font-medium">Cargando pistas...</p>
+                        </div>
+                        <div id="music-options" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <!-- Opciones inyectadas por JS -->
+                        </div>
+                        <div class="flex justify-between items-center mt-4 pt-3 border-t border-yellow-100">
+                            <button onclick="resetMusicGame()" class="text-xs text-yellow-700 hover:text-yellow-900 font-semibold uppercase tracking-wider focus:outline-none">Reiniciar</button>
+                            <span id="music-feedback" class="text-xs font-bold"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto Anterior 1 -->
                 <div class="group">
                     <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
                         <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">P1</div>
@@ -590,11 +663,11 @@
                         <a href="https://tu-proyecto-ecommerce.com" target="_blank">E-Commerce Premium - Plataforma Completa de Ventas</a>
                     </h3>
                     <p class="text-[14px] google-dark-gray leading-relaxed font-light">
-                        Desarrollo de una tienda en línea moderna con carrito de compras reactivo, pasarela de pago simulada, diseño ultra rápido con Tailwind y base de datos persistente.
+                        Desarrollo de una tienda en línea moderna con carrito de compras reactivo, pasarela de pago simulada, diseño ultra rápido con Tailwind y base de datos de pruebas.
                     </p>
                 </div>
                 
-                <!-- Proyecto 2 -->
+                <!-- Proyecto Anterior 2 -->
                 <div class="group">
                     <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
                         <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">P2</div>
@@ -608,7 +681,7 @@
                     </p>
                 </div>
 
-                <!-- Proyecto 3 -->
+                <!-- Proyecto Anterior 3 -->
                 <div class="group">
                     <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
                         <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">P3</div>
@@ -618,49 +691,7 @@
                         <a href="https://tu-proyecto-arcade.com" target="_blank">Retro-Space Invaders - Videojuego Clásico en HTML5 Canvas</a>
                     </h3>
                     <p class="text-[14px] google-dark-gray leading-relaxed font-light">
-                        Un videojuego interactivo desarrollado enteramente con Javascript clásico. Cuenta con sistema de colisiones preciso, sprites vectoriales, marcador dinámico de puntos y control táctil/teclado.
-                    </p>
-                </div>
-
-                <!-- Proyecto 4 -->
-                <div class="group">
-                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
-                        <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">P4</div>
-                        <span class="text-xs text-gray-500 hover:underline cursor-pointer">https://luizabeth.dev &gt; proyectos &gt; weather-wise</span>
-                    </div>
-                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
-                        <a href="https://tu-proyecto-clima.com" target="_blank">WeatherWise - App del Clima Global en Tiempo Real</a>
-                    </h3>
-                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
-                        Aplicación que se conecta a APIs meteorológicas para proveer estadísticas climáticas del día y predicciones de la semana de cualquier país, acompañada de una interfaz que cambia de color según la temperatura.
-                    </p>
-                </div>
-
-                <!-- Proyecto 5 -->
-                <div class="group">
-                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
-                        <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">P5</div>
-                        <span class="text-xs text-gray-500 hover:underline cursor-pointer">https://luizabeth.dev &gt; proyectos &gt; kanban-board</span>
-                    </div>
-                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
-                        <a href="https://tu-proyecto-tareas.com" target="_blank">TaskSphere - Organizador de Tareas Personal Estilo Kanban</a>
-                    </h3>
-                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
-                        Un gestor de flujo de trabajo intuitivo con columnas de "Pendientes", "En Curso" y "Completadas". Implementa funcionalidad Drag-and-Drop y sincronización instantánea con localStorage.
-                    </p>
-                </div>
-
-                <!-- Proyecto 6 -->
-                <div class="group">
-                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
-                        <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">P6</div>
-                        <span class="text-xs text-gray-500 hover:underline cursor-pointer">https://luizabeth.dev &gt; proyectos &gt; color-palette</span>
-                    </div>
-                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
-                        <a href="https://tu-proyecto-colores.com" target="_blank">ColorSphere - Generador de Paletas Cromáticas para Diseñadores</a>
-                    </h3>
-                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
-                        Generador inteligente de paletas de colores armónicas. Permite exportar los códigos Hexadecimales de forma rápida con un clic para acelerar la maquetación de proyectos de diseño visual.
+                        Un videojuego interactivo desarrollado enteramente con Javascript clásico. Cuenta con sistema de colisiones preciso, sprites vectoriales, marcador dinámico de puntos y control de teclado.
                     </p>
                 </div>
             `,
@@ -828,7 +859,7 @@
                         <a href="https://youtube.com" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-red-200 transition-all text-center group">
                             <div class="w-12 h-12 rounded-xl bg-red-600 flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
                                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.871.507 9.388.507 9.388.507s7.517 0 9.388-.507a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    <path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.871.507 9.388.507 9.388.507s7.517 0 9.388-.507a3.003 3.003 0 00-2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                                 </svg>
                             </div>
                             <span class="text-xs font-bold text-gray-800">YouTube</span>
@@ -927,7 +958,7 @@
                         <h4 class="text-lg font-medium text-gray-900 mb-2">Ficha de Luizabeth</h4>
                         <p class="text-xs text-gray-500 mb-4">Desarrolladora Web / UI Designer</p>
                         <div class="space-y-2 text-xs">
-                            <div class="border-t border-gray-200 pt-2"><span class="font-semibold text-gray-700">País natal:</span> Venezuela</div>
+                            <div class="border-t border-gray-200 pt-2"><span class="font-semibold text-gray-700">País natal:</span> Venezuela 🇻🇪</div>
                             <div class="border-t border-gray-200 pt-2"><span class="font-semibold text-gray-700">Edad:</span> 15 años</div>
                             <div class="border-t border-gray-200 pt-2"><span class="font-semibold text-gray-700">Especialidad:</span> Interfaces interactivas nítidas</div>
                             <div class="border-t border-gray-200 pt-2"><span class="font-semibold text-gray-700">Enfoque:</span> IA, UI/UX, Accesibilidad, Desarrollo Web</div>
@@ -950,7 +981,7 @@
                             <img src="remove_light.png.jpg" alt="Luizabeth Contreras" class="w-full h-full object-cover">
                         </div>
                         <div class="mt-3.5 text-center">
-                            <span class="font-bold text-gray-700 text-sm tracking-wide">LUIZABETH</span>
+                            <span class="font-bold text-gray-700 text-sm tracking-wide font-mono">LUIZABETH</span>
                         </div>
                     </div>
 
@@ -967,6 +998,47 @@
                         <p class="text-xs font-semibold text-pink-600 italic">"El diseño es magia, el desarrollo es real. creemos algo juntos"</p>
                     </div>
 
+                </div>
+
+                <!-- SECCIÓN DEDICADA A LA NACIONALIDAD (Venezuela Frutiger Metro Style) -->
+                <div class="mt-12 bg-slate-900 rounded-3xl p-6 sm:p-10 relative overflow-hidden border border-slate-800 shadow-xl flex flex-col md:flex-row gap-8 items-center text-white">
+                    <!-- Bandera abstracta y dinámica de fondo (CSS puro de Venezuela Frutiger metro flag.jpg) -->
+                    <div class="absolute inset-0 z-0 opacity-20 pointer-events-none flex flex-col">
+                        <div class="h-1/3 bg-[#fcc300]"></div> <!-- Amarillo -->
+                        <div class="h-1/3 bg-[#0038a8] relative flex items-center justify-center">
+                            <!-- Arco de estrellas simulado -->
+                            <div class="absolute border-2 border-dashed border-white/40 w-32 h-32 rounded-full -top-16"></div>
+                        </div>
+                        <div class="h-1/3 bg-[#cf142b]"></div> <!-- Rojo -->
+                    </div>
+                    
+                    <!-- Elementos gráficos de Frutiger Metro con curvas abstractas -->
+                    <div class="absolute inset-0 z-0 pointer-events-none opacity-10">
+                        <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M 0,50 Q 25,30 50,50 T 100,50" fill="none" stroke="#ffffff" stroke-width="1.5" />
+                            <path d="M 0,60 Q 35,40 70,70 T 100,60" fill="none" stroke="#ffffff" stroke-width="1" />
+                            <circle cx="20" cy="30" r="10" fill="none" stroke="#ffffff" stroke-width="0.5" />
+                            <circle cx="80" cy="70" r="6" fill="none" stroke="#ffffff" stroke-width="0.5" />
+                        </svg>
+                    </div>
+
+                    <!-- Lado izquierdo: Sello de Identidad / Orgullo -->
+                    <div class="shrink-0 w-24 h-24 rounded-full bg-yellow-400 text-slate-900 font-extrabold flex flex-col items-center justify-center shadow-lg border-4 border-white/25 z-10 animate-bounce select-none">
+                        <span class="text-xs tracking-wider">ORGULLO</span>
+                        <span class="text-xl">100%</span>
+                        <span class="text-xs">VENEZOLANA</span>
+                    </div>
+
+                    <!-- Lado derecho: Descripción de raíces -->
+                    <div class="flex-grow z-10 bg-slate-950/80 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+                        <div class="flex items-center space-x-2.5 mb-3">
+                            <span class="text-xl">🇻🇪</span>
+                            <h4 class="font-bold text-yellow-400 text-lg sm:text-xl font-serif tracking-wide">Mis Raíces Venezolanas</h4>
+                        </div>
+                        <p class="text-xs sm:text-sm leading-relaxed text-slate-200 font-light">
+                            Nací en la hermosa tierra de <strong>Venezuela</strong>, un país lleno de calidez, paisajes majestuosos y gente trabajadora con un espíritu alegre e inquebrantable. Esta rica cultura influye directamente en mi manera de ver el mundo: aportando una esencia creativa vibrante, colores alegres en mis interfaces y un entusiasmo constante por salir adelante, aprender y construir nuevas ideas a través del código.
+                        </p>
+                    </div>
                 </div>
 
                 <!-- SECCIÓN DE VIDEOS DE YOUTUBE -->
@@ -1151,7 +1223,7 @@
                             <div>
                                 <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-4">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                        <path d="M13 10V3L4 14h7v7l9-11h-7z" />
                                     </svg>
                                 </div>
                                 <h4 class="font-bold text-gray-800 text-base leading-tight mb-2 group-hover/card:text-blue-600 transition-colors">5. Impulso Digital</h4>
@@ -1303,7 +1375,7 @@
                             <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
                                 <div class="bg-purple-500 h-full rounded-full" style="width: 90%"></div>
                             </div>
-                            <div class="flex justify-between text-[10px] text-gray-400 mt-1">
+                            <div class="flex justify-between text-[10px] text-gray-400 mt-1 flex-grow">
                                 <span>Dominio técnico</span>
                                 <span class="font-medium text-gray-600">Avanzado</span>
                             </div>
@@ -1456,7 +1528,7 @@
                                 
                                 <div class="flex justify-between items-center z-10 text-slate-800 font-bold text-xs uppercase tracking-widest">
                                     <span>Enero 16</span>
-                                    <span>2026</span>
+                                    <span>2025</span>
                                 </div>
 
                                 <div class="text-center z-10 flex flex-col items-center my-auto space-y-4">
@@ -1837,7 +1909,7 @@
             if (val.trim()) {
                 document.title = val + ' - Buscar con Luizabeth';
                 document.getElementById('current-filter-badge').textContent = val;
-                showToast(`Filtrando búsqueda: "${val}"`);
+                showToast("Búsqueda ejecutada: " + val);
             }
         }
 
