@@ -173,9 +173,9 @@
                         <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM6 4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
                     </svg>
                 </button>
-                <!-- Custom Profile Avatar -->
-                <div class="w-8 h-8 rounded-full overflow-hidden cursor-pointer bg-gradient-to-tr from-indigo-500 to-purple-600 text-white flex items-center justify-center font-bold text-sm shadow-sm hover:shadow transition-shadow">
-                    L
+                <!-- Custom Profile Avatar with Luizabeth's real photo -->
+                <div class="w-8 h-8 rounded-full overflow-hidden cursor-pointer shadow-sm hover:shadow transition-shadow border border-gray-200">
+                    <img src="Untitled.png" alt="Luizabeth Contreras" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
@@ -339,7 +339,7 @@
                         Cuando no estoy escribiendo código con HTML5, Tailwind CSS o React.js, me encanta pasar tiempo investigando sobre la psicología del color, explorando nuevas corrientes de diseño retro e interactivo, y grabando videos de procesos cortos para inspirar a otros creadores a sumergirse en este fascinante camino del autodesarrollo y el diseño visual.
                     </p>
                     <p>
-                        Este espacio interactivo simula un motor de búsqueda personalizado para que descubras cada aspecto de mi trabajo de una manera divertida e intuitiva. ¡Espero que disfrutes explorando todo lo que he construido para ti!
+                        Este espacio interactivo simula un motor de búsqueda personalizado para que descubras cada aspecto de mi trabajo de una manera divertida e intuitiva. ¡Espero que jod-disfrutes explorando todo lo que he construido para ti!
                     </p>
                 </div>
             </div>
@@ -388,7 +388,7 @@
             <h3 class="text-lg font-bold text-gray-900 mb-4 mt-2">¿Cómo funciona la Búsqueda?</h3>
             <div class="space-y-4 text-sm text-gray-600 leading-relaxed font-light">
                 <p>
-                    Este sitio web es un <strong>portfolio dinámico</strong> que simula la interfaz clásica del motor de búsqueda de Google.
+                    This site web es un <strong>portfolio dinámico</strong> que simula la interfaz clásica del motor de búsqueda de Google.
                 </p>
                 <p>
                     Al hacer clic en cualquiera de las pestañas superiores (como <em>Proyectos, Estudios o Servicios</em>), el sistema consulta de forma instantánea una base de datos local estructurada en JavaScript (`searchDatabase`). 
@@ -421,65 +421,138 @@
         </div>
     </div>
 
-    <!-- Modal 5: Motivación y Estudios (Fondo Verde Tinkerbell Starry con ilustraciones SVG) -->
+    <!-- Modal 5: Motivación y Estudios (Fondo Verde Tinkerbell Starry con Ilustraciones y Descripciones a Dos Columnas) -->
     <div id="modal-estudios-motivacion" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-xs px-4">
-        <div class="bg-stars-green rounded-3xl p-6 sm:p-8 max-w-2xl w-full shadow-2xl relative border-4 border-yellow-100 text-gray-800 max-h-[85vh] overflow-y-auto">
-            <button onclick="closeFooterModal('estudios-motivacion')" class="absolute top-4 right-4 bg-yellow-100 hover:bg-yellow-200 text-gray-800 rounded-full p-2 transition-all shadow-md z-10">
+        <div class="bg-stars-green rounded-3xl p-4 sm:p-8 max-w-4xl w-full shadow-2xl relative border-4 border-yellow-100 text-gray-800 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeFooterModal('estudios-motivacion')" class="absolute top-4 right-4 bg-yellow-100 hover:bg-yellow-200 text-gray-800 rounded-full p-2 transition-all shadow-md z-15">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
-            <div class="bg-white/95 backdrop-blur-md rounded-2xl p-6 border border-white/20 mt-4 shadow-lg">
-                <h3 class="text-2xl font-bold text-emerald-800 mb-4 font-serif">Mi Pasión por la Tecnología</h3>
-                
-                <div class="space-y-4 text-sm font-light leading-relaxed text-gray-700">
-                    <p>
-                        Mi camino en los estudios está impulsado por una profunda <strong>curiosidad y entusiasmo</strong>. Creo que la programación no se trata solo de escribir código, sino de resolver acertijos diarios y diseñar herramientas que faciliten la vida de las personas de forma amigable.
-                    </p>
-                    <p>
-                        Cada curso que completo en plataformas como <strong>Skilio</strong> amplía mis horizontes. He aprendido lógica computacional con Python, metodologías de trabajo autónomo freelance e incluso finanzas básicas con análisis de inversión. Esto me ayuda a comprender el mundo tecnológico de forma integral.
-                    </p>
-                    <p class="font-semibold text-emerald-700">
-                        "¡El entusiasmo es la chispa que transforma las líneas de código en soluciones mágicas!"
-                    </p>
+            
+            <div class="bg-white/95 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/20 mt-4 shadow-lg">
+                <h3 class="text-2xl sm:text-3xl font-bold text-emerald-800 mb-6 font-serif border-b border-gray-100 pb-3 flex items-center gap-2.5">
+                    <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    Mi Pasión por la Tecnología & Aprendizaje
+                </h3>
+
+                <!-- Contenedor a Dos Columnas -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-8">
+                    
+                    <!-- Columna Izquierda: Foto de Luizabeth tipo Retrato Polaroid -->
+                    <div class="md:col-span-4 flex flex-col items-center">
+                        <div class="w-full max-w-[220px] bg-slate-50 p-3 pb-8 rounded-xl shadow-md border border-gray-200 rotate-1 hover:rotate-0 transition-transform duration-300">
+                            <div class="w-full aspect-square bg-indigo-100 rounded-lg overflow-hidden flex items-center justify-center relative shadow-inner border border-gray-150">
+                                <!-- Imagen real de Luizabeth Contreras -->
+                                <img src="Untitled.png" alt="Luizabeth Contreras" class="w-full h-full object-cover">
+                            </div>
+                            <div class="mt-4 text-center">
+                                <span class="font-bold text-gray-700 text-xs tracking-wider font-mono">LUIZABETH</span>
+                                <p class="text-[9px] text-emerald-600 font-bold uppercase mt-1">Free Spirit 🌟</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Descripción tipo Biografía de Entusiasmo y Herramientas -->
+                    <div class="md:col-span-8 space-y-4">
+                        <h4 class="text-lg font-bold text-emerald-950 font-serif">¿Cómo canalizo mi entusiasmo por aprender?</h4>
+                        <div class="text-sm text-gray-700 leading-relaxed font-light space-y-3">
+                            <p>
+                                Tengo 15 años y me considero una persona de espíritu libre que busca plasmar su esencia única en cada píxel que diseña y cada línea de código que escribe. Mi pasión es dar vida a ideas funcionales desde cero, logrando que el diseño no solo sea agradable a la vista, sino también sumamente accesible y amigable para todo tipo de público.
+                            </p>
+                            <p>
+                                Canalizo todo mi entusiasmo explorando y completando cursos interactivos de vanguardia en la plataforma <strong>Skilio</strong>, bajo la dirección de mentores como Adrián Sáenz. He adquirido sólidas bases en lógica de programación, finanzas, metodologías de trabajo independiente (freelance) y mucho más.
+                            </p>
+                            <p>
+                                Además, adopto de forma proactiva la <strong>Inteligencia Artificial</strong> como mi copiloto diario de aprendizaje. La utilizo para acelerar el desarrollo de mis proyectos, depurar fallos de manera didáctica y expandir mis capacidades de programación hacia nuevos límites cada día.
+                            </p>
+                        </div>
+                        <p class="font-semibold text-emerald-700 text-sm italic border-l-4 border-emerald-500 pl-3.5 my-2">
+                            "¡El entusiasmo es la fuerza motriz que convierte un simple código en interfaces mágicas!"
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Ilustraciones/Imágenes de mis estudios -->
-                <div class="mt-8 border-t border-gray-100 pt-6">
-                    <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Capturas Visuales de mi Aprendizaje</h4>
-                    <div class="grid grid-cols-3 gap-4">
-                        <!-- Imagen/Ilustración 1: Code workspace mock -->
-                        <div class="bg-slate-900 rounded-xl p-3 flex flex-col justify-between aspect-video shadow-sm">
-                            <div class="flex space-x-1">
-                                <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
-                                <span class="w-1.5 h-1.5 rounded-full bg-yellow-500"></span>
-                                <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                            </div>
-                            <div class="text-[8px] font-mono text-emerald-400 space-y-0.5">
-                                <div>def aprender():</div>
-                                <div class="pl-2">print("Python 🐍")</div>
-                            </div>
+                <!-- SECCIÓN DE HERRAMIENTAS DIGITAL -->
+                <div class="border-t border-gray-100 pt-6">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Mi Kit Tecnológico & Herramientas</h4>
+                    
+                    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+                        
+                        <!-- GitHub -->
+                        <div class="flex flex-col items-center p-2.5 bg-gray-50 border border-gray-100 rounded-xl text-center group hover:bg-gray-900 hover:text-white transition-all cursor-default">
+                            <span class="text-xl">🐙</span>
+                            <span class="text-[11px] font-bold mt-1">GitHub</span>
                         </div>
 
-                        <!-- Imagen/Ilustración 2: Design palette mock -->
-                        <div class="bg-pink-50 rounded-xl p-3 flex flex-col justify-between aspect-video shadow-sm border border-pink-100">
-                            <span class="text-[9px] font-bold text-pink-700 uppercase tracking-widest">Colores</span>
-                            <div class="flex space-x-1.5">
-                                <span class="w-3.5 h-3.5 rounded-full bg-yellow-300"></span>
-                                <span class="w-3.5 h-3.5 rounded-full bg-pink-400"></span>
-                                <span class="w-3.5 h-3.5 rounded-full bg-emerald-400"></span>
-                            </div>
+                        <!-- Vercel -->
+                        <div class="flex flex-col items-center p-2.5 bg-gray-50 border border-gray-100 rounded-xl text-center group hover:bg-black hover:text-white transition-all cursor-default">
+                            <span class="text-xl">▲</span>
+                            <span class="text-[11px] font-bold mt-1">Vercel</span>
                         </div>
 
-                        <!-- Imagen/Ilustración 3: Books mock -->
-                        <div class="bg-sky-50 rounded-xl p-3 flex flex-col justify-between aspect-video shadow-sm border border-sky-100">
-                            <div class="w-6 h-6 rounded-lg bg-sky-500 flex items-center justify-center text-white">
-                                <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                </svg>
-                            </div>
-                            <span class="text-[9px] font-bold text-sky-700">Skilio Docs</span>
+                        <!-- VS Code -->
+                        <div class="flex flex-col items-center p-2.5 bg-gray-50 border border-gray-100 rounded-xl text-center group hover:bg-blue-600 hover:text-white transition-all cursor-default">
+                            <span class="text-xl">💻</span>
+                            <span class="text-[11px] font-bold mt-1">VS Code</span>
                         </div>
+
+                        <!-- Canva -->
+                        <div class="flex flex-col items-center p-2.5 bg-gray-50 border border-gray-100 rounded-xl text-center group hover:bg-cyan-500 hover:text-white transition-all cursor-default">
+                            <span class="text-xl">🎨</span>
+                            <span class="text-[11px] font-bold mt-1">Canva</span>
+                        </div>
+
+                        <!-- Figma -->
+                        <div class="flex flex-col items-center p-2.5 bg-gray-50 border border-gray-100 rounded-xl text-center group hover:bg-orange-500 hover:text-white transition-all cursor-default">
+                            <span class="text-xl">❖</span>
+                            <span class="text-[11px] font-bold mt-1">Figma</span>
+                        </div>
+
+                        <!-- CodePen -->
+                        <div class="flex flex-col items-center p-2.5 bg-gray-50 border border-gray-100 rounded-xl text-center group hover:bg-slate-800 hover:text-white transition-all cursor-default">
+                            <span class="text-xl">⬡</span>
+                            <span class="text-[11px] font-bold mt-1">CodePen</span>
+                        </div>
+
+                        <!-- Node.js -->
+                        <div class="flex flex-col items-center p-2.5 bg-gray-50 border border-gray-100 rounded-xl text-center group hover:bg-green-600 hover:text-white transition-all cursor-default">
+                            <span class="text-xl">🟢</span>
+                            <span class="text-[11px] font-bold mt-1">Node.js</span>
+                        </div>
+
+                        <!-- Python -->
+                        <div class="flex flex-col items-center p-2.5 bg-gray-50 border border-gray-100 rounded-xl text-center group hover:bg-yellow-500 hover:text-blue-900 transition-all cursor-default">
+                            <span class="text-xl">🐍</span>
+                            <span class="text-[11px] font-bold mt-1">Python</span>
+                        </div>
+
+                        <!-- Firebase -->
+                        <div class="flex flex-col items-center p-2.5 bg-gray-50 border border-gray-100 rounded-xl text-center group hover:bg-amber-500 hover:text-white transition-all cursor-default">
+                            <span class="text-xl">🔥</span>
+                            <span class="text-[11px] font-bold mt-1">Firebase</span>
+                        </div>
+
+                        <!-- Supabase -->
+                        <div class="flex flex-col items-center p-2.5 bg-gray-50 border border-gray-100 rounded-xl text-center group hover:bg-emerald-600 hover:text-white transition-all cursor-default">
+                            <span class="text-xl">⚡</span>
+                            <span class="text-[11px] font-bold mt-1">Supabase</span>
+                        </div>
+
+                        <!-- SQL -->
+                        <div class="flex flex-col items-center p-2.5 bg-gray-50 border border-gray-100 rounded-xl text-center group hover:bg-indigo-600 hover:text-white transition-all cursor-default">
+                            <span class="text-xl">🛢️</span>
+                            <span class="text-[11px] font-bold mt-1">SQL</span>
+                        </div>
+
+                        <!-- Codespaces -->
+                        <div class="flex flex-col items-center p-2.5 bg-gray-50 border border-gray-100 rounded-xl text-center group hover:bg-purple-600 hover:text-white transition-all cursor-default">
+                            <span class="text-xl">☁️</span>
+                            <span class="text-[11px] font-bold mt-1">Codespaces</span>
+                        </div>
+
                     </div>
                 </div>
 
@@ -552,7 +625,7 @@
                         <a href="#" onclick="navigateToTab('Proyectos'); return false;">Mis Proyectos de Desarrollo Web, Aplicaciones y Juegos Interactivos</a>
                     </h3>
                     <p class="text-[14px] google-dark-gray leading-relaxed font-light">
-                        Explora mi colección de proyectos interactivos creados con tecnologías modernas. Incluye aplicaciones web completas, juegos interactivos de adivinanza (libros y música) y diseños web responsivos de alta fidelidad.
+                        Explora mi colección de proyectos interactivos creados con tecnologías modernas. Incluye aplicaciones web completas, juegos interactivos de adivinanza (libros y música) y deisgn web responsivos de alta fidelidad.
                     </p>
                 </div>
 
@@ -591,7 +664,72 @@
                 </div>
             `,
             'Proyectos': `
-                <!-- NUEVO PROYECTO 1: JUEGO DE ADIVINAR EL LIBRO -->
+                <!-- TITULO SECCIÓN PROYECTOS REALES -->
+                <div class="mb-6">
+                    <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <span class="w-2.5 h-6 bg-blue-600 rounded-full"></span>
+                        Mis Páginas y Aplicaciones Publicadas 🚀
+                    </h2>
+                    <p class="text-xs text-gray-500">Haz clic en los títulos para visitar mis proyectos reales en vivo.</p>
+                </div>
+
+                <!-- 1. LULU ES PROGRAMADORA DE WEBS -->
+                <div class="group border border-gray-100 bg-white shadow-xs rounded-2xl p-5 hover:shadow-md transition-all">
+                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
+                        <div class="w-6 h-6 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center font-bold text-xs">1</div>
+                        <span class="text-xs text-gray-500 hover:underline cursor-pointer">programmersforeveryone11-blip.github.io &gt; lulu-es-programadora-de-webs</span>
+                    </div>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-semibold mb-1">
+                        <a href="https://programmersforeveryone11-blip.github.io/lulu-es-programadora-de-webs./" target="_blank">Lulu es Programadora de Webs 👩‍💻</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                        Mi primera página web creada especialmente como un proyecto de programación interactivo para el liceo, sentando las bases de mi viaje de aprendizaje técnico.
+                    </p>
+                </div>
+
+                <!-- 2. ARTHUR MORGAN -->
+                <div class="group border border-gray-100 bg-white shadow-xs rounded-2xl p-5 hover:shadow-md transition-all mt-4">
+                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
+                        <div class="w-6 h-6 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold text-xs">2</div>
+                        <span class="text-xs text-gray-500 hover:underline cursor-pointer">programmersforeveryone11-blip.github.io &gt; arthur-morgan</span>
+                    </div>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-semibold mb-1">
+                        <a href="https://programmersforeveryone11-blip.github.io/arthur-morgan/" target="_blank">Arthur Morgan Interactive 🤠❤️</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                        Una divertida web interactiva y de broma que esconde una genial sorpresa cuando tocas el corazón central del diseño. ¡Pruébala!
+                    </p>
+                </div>
+
+                <!-- 3. ESTUDIANTES DE MEDIA TECNICA CALASANZ -->
+                <div class="group border border-gray-100 bg-white shadow-xs rounded-2xl p-5 hover:shadow-md transition-all mt-4">
+                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
+                        <div class="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold text-xs">3</div>
+                        <span class="text-xs text-gray-500 hover:underline cursor-pointer">programmersforeveryone11-blip.github.io &gt; estudiantes-de-media-tecnica-calasanz</span>
+                    </div>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-semibold mb-1">
+                        <a href="https://programmersforeveryone11-blip.github.io/estudiantes-de-media-tecnica-calasanz/" target="_blank">Estudiantes de Media Técnica Calasanz 🏫</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                        Portal web sumamente útil para los estudiantes de media técnica del Colegio Calasanz. Permite procesar pedidos simulados, enviar correos y cuenta con apartados interactivos de servicios para toda la comunidad escolar.
+                    </p>
+                </div>
+
+                <!-- 4. CODE ANALYST DASHBOARD -->
+                <div class="group border border-gray-100 bg-white shadow-xs rounded-2xl p-5 hover:shadow-md transition-all mt-4 mb-10">
+                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
+                        <div class="w-6 h-6 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center font-bold text-xs">4</div>
+                        <span class="text-xs text-gray-500 hover:underline cursor-pointer">programmersforeveryone11-blip.github.io &gt; code</span>
+                    </div>
+                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-semibold mb-1">
+                        <a href="https://programmersforeveryone11-blip.github.io/code/" target="_blank">Data Analyst & SaaS Dashboard - Git Codespaces 📊</a>
+                    </h3>
+                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
+                        Un trabajo avanzado diseñado utilizando Git y GitHub Codespaces. Consiste en una plataforma SaaS interactiva optimizada para el análisis de datos mediante un panel gráfico de control (dashboard).
+                    </p>
+                </div>
+
+                <!-- JUEGO DE ADIVINAR EL LIBRO -->
                 <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-indigo-150 rounded-2xl p-6 shadow-xs mb-6 group/game">
                     <div class="flex items-center space-x-2 text-xs text-indigo-600 font-bold uppercase tracking-wider mb-2">
                         <span class="bg-indigo-100 px-2 py-0.5 rounded">Proyecto Destacado</span>
@@ -622,7 +760,7 @@
                     </div>
                 </div>
 
-                <!-- NUEVO PROYECTO 2: JUEGO DE ADIVINAR EL ARTISTA / MÚSICA (CON FONDO AMARILLO CHECKERBOARD RETRO) -->
+                <!-- JUEGO DE ADIVINAR EL ARTISTA / MÚSICA -->
                 <div class="bg-checkerboard-yellow border border-yellow-200 rounded-2xl p-6 shadow-xs mb-8 group/game relative overflow-hidden">
                     <div class="flex items-center space-x-2 text-xs text-yellow-800 font-bold uppercase tracking-wider mb-2 relative z-10">
                         <span class="bg-yellow-200/90 px-2 py-0.5 rounded">Aesthetic Game</span>
@@ -651,48 +789,6 @@
                             <span id="music-feedback" class="text-xs font-bold"></span>
                         </div>
                     </div>
-                </div>
-
-                <!-- Proyecto Anterior 1 -->
-                <div class="group">
-                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
-                        <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">P1</div>
-                        <span class="text-xs text-gray-500 hover:underline cursor-pointer">https://luizabeth.dev &gt; proyectos &gt; e-commerce</span>
-                    </div>
-                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
-                        <a href="https://tu-proyecto-ecommerce.com" target="_blank">E-Commerce Premium - Plataforma Completa de Ventas</a>
-                    </h3>
-                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
-                        Desarrollo de una tienda en línea moderna con carrito de compras reactivo, pasarela de pago simulada, diseño ultra rápido con Tailwind y base de datos de pruebas.
-                    </p>
-                </div>
-                
-                <!-- Proyecto Anterior 2 -->
-                <div class="group">
-                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
-                        <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">P2</div>
-                        <span class="text-xs text-gray-500 hover:underline cursor-pointer">https://luizabeth.dev &gt; proyectos &gt; dashboard</span>
-                    </div>
-                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
-                        <a href="https://tu-proyecto-dashboard.com" target="_blank">Dashboard de Monitoreo - Visualización de Datos en Tiempo Real</a>
-                    </h3>
-                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
-                        Panel de control con gráficos interactivos dinámicos, filtros de rango de fechas y soporte para modo oscuro adaptativo. Desarrollado con React y Chart.js.
-                    </p>
-                </div>
-
-                <!-- Proyecto Anterior 3 -->
-                <div class="group">
-                    <div class="flex items-center space-x-2 text-sm text-gray-800 mb-1.5">
-                        <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">P3</div>
-                        <span class="text-xs text-gray-500 hover:underline cursor-pointer">https://luizabeth.dev &gt; proyectos &gt; canvas-game</span>
-                    </div>
-                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
-                        <a href="https://tu-proyecto-arcade.com" target="_blank">Retro-Space Invaders - Videojuego Clásico en HTML5 Canvas</a>
-                    </h3>
-                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
-                        Un videojuego interactivo desarrollado enteramente con Javascript clásico. Cuenta con sistema de colisiones preciso, sprites vectoriales, marcador dinámico de puntos y control de teclado.
-                    </p>
                 </div>
             `,
             'Estudios': `
@@ -794,7 +890,7 @@
                         <a href="#" onclick="openFooterModal('estudios-motivacion'); return false;">Mi Pasión, Entusiasmo y Futuro en la Tecnología</a>
                     </h3>
                     <p class="text-[14px] google-dark-gray leading-relaxed font-light">
-                        Haz clic aquí para abrir un resumen interactivo sobre cómo canalizo mi entusiasmo por aprender y mis conocimientos avanzados en herramientas digitales, acompañado de capturas de mis estudios.
+                        Haz clic aquí para abrir un resumen interactivo sobre cómo canalizo mi entusiasmo por aprender y mis conocimientos avanzados en herramientas digitales, acompañado de capturas de mis estudios y mi foto de retrato.
                     </p>
                 </div>
             `,
@@ -831,96 +927,85 @@
                     <p class="text-xs text-slate-500 text-center mb-6 max-w-md mx-auto">
                         <strong>Nota de Emprendimiento:</strong> Los métodos de contacto provistos a continuación están destinados de forma exclusiva a fines de emprendimiento, propuestas comerciales o alianzas de marca sanas y seguras.
                     </p>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
                         
-                        <!-- Instagram -->
-                        <a href="https://instagram.com" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-pink-200 transition-all text-center group">
-                            <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                                </svg>
-                            </div>
-                            <span class="text-xs font-bold text-gray-800">Instagram</span>
-                            <span class="text-[10px] text-gray-400 mt-0.5">@luizabeth</span>
-                        </a>
-
-                        <!-- TikTok -->
-                        <a href="https://tiktok.com" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-cyan-200 transition-all text-center group">
-                            <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12.525.01c1.31 0 2.5.43 3.47 1.13.04-.15.08-.3.12-.45h2.15v2.24c-.67-.01-1.33-.11-1.97-.31a4.93 4.93 0 01-3.13-2.58l-.04.14v7.7c0 2.56-2.07 4.63-4.63 4.63a4.63 4.63 0 01-4.63-4.63c0-2.56 2.07-4.63 4.63-4.63.42 0 .83.06 1.22.17V1.7c-.4-.06-.8-.09-1.22-.09a7.35 7.35 0 00-7.35 7.35 7.35 0 007.35 7.35 7.35 0 007.35-7.35V2.32c1.23.95 2.76 1.52 4.43 1.52v-2.1c-1.23 0-2.35-.45-3.23-1.2-.28-.24-.52-.51-.73-.81z"/>
-                                </svg>
-                            </div>
-                            <span class="text-xs font-bold text-gray-800">TikTok</span>
-                            <span class="text-[10px] text-gray-400 mt-0.5">@luizabeth.dev</span>
-                        </a>
-
-                        <!-- YouTube -->
-                        <a href="https://youtube.com" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-red-200 transition-all text-center group">
-                            <div class="w-12 h-12 rounded-xl bg-red-600 flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.871.507 9.388.507 9.388.507s7.517 0 9.388-.507a3.003 3.003 0 00-2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                                </svg>
-                            </div>
-                            <span class="text-xs font-bold text-gray-800">YouTube</span>
-                            <span class="text-[10px] text-gray-400 mt-0.5">Luizabeth Blog</span>
-                        </a>
-
-                        <!-- Facebook -->
-                        <a href="https://facebook.com" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-blue-200 transition-all text-center group">
-                            <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                                </svg>
-                            </div>
-                            <span class="text-xs font-bold text-gray-800">Facebook</span>
-                            <span class="text-[10px] text-gray-400 mt-0.5">Luizabeth</span>
-                        </a>
-
-                        <!-- GitHub -->
-                        <a href="https://github.com" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-gray-300 transition-all text-center group">
-                            <div class="w-12 h-12 rounded-xl bg-gray-900 flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/>
-                                </svg>
-                            </div>
-                            <span class="text-xs font-bold text-gray-800">GitHub</span>
-                            <span class="text-[10px] text-gray-400 mt-0.5">@luizabeth-dev</span>
-                        </a>
-
-                        <!-- Upwork -->
-                        <a href="https://upwork.com" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-green-200 transition-all text-center group">
-                            <div class="w-12 h-12 rounded-xl bg-[#14a800] flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
-                                <span class="font-bold text-lg">up</span>
-                            </div>
-                            <span class="text-xs font-bold text-gray-800">Upwork</span>
-                            <span class="text-[10px] text-gray-400 mt-0.5">Freelancer</span>
-                        </a>
-
-                        <!-- Telegram -->
-                        <a href="https://telegram.org" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-sky-200 transition-all text-center group">
-                            <div class="w-12 h-12 rounded-xl bg-[#0088cc] flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm4.58-13.66l-1.63 7.67c-.12.53-.44.66-.88.41l-2.48-1.83-1.2 1.15c-.13.13-.24.24-.5.24l.18-2.52 4.58-4.14c.2-.18-.04-.28-.3-.1l-5.67 3.57-2.44-.76c-.53-.17-.54-.53.11-.79l9.53-3.67c.44-.16.83.11.68.83z"/>
-                                </svg>
-                            </div>
-                            <span class="text-xs font-bold text-gray-800">Telegram</span>
-                            <span class="text-[10px] text-gray-400 mt-0.5">@luizabeth</span>
-                        </a>
-
                         <!-- WhatsApp -->
-                        <a href="https://whatsapp.com" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-green-300 transition-all text-center group">
+                        <a href="https://wa.me/584228028774" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-green-300 transition-all text-center group">
                             <div class="w-12 h-12 rounded-xl bg-[#25D366] flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
                                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.287 1.487 4.912 1.488 5.405 0 9.803-4.393 9.806-9.799.002-2.62-1.018-5.084-2.871-6.938C16.638 2.052 14.175 1.03 11.554 1.03c-5.412 0-9.81 4.393-9.813 9.801-.001 1.77.487 3.5 1.411 5.013l-.935 3.41 3.491-.915z"/>
                                 </svg>
                             </div>
                             <span class="text-xs font-bold text-gray-800">WhatsApp</span>
-                            <span class="text-[10px] text-gray-400 mt-0.5">Escríbeme</span>
+                            <span class="text-[10px] text-gray-400 mt-0.5">04228028774</span>
                         </a>
 
+                        <!-- Telegram -->
+                        <a href="https://t.me/+584228028774" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-sky-200 transition-all text-center group">
+                            <div class="w-12 h-12 rounded-xl bg-[#0088cc] flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm4.58-13.66l-1.63 7.67c-.12.53-.44.66-.88.41l-2.48-1.83-1.2 1.15c-.13.13-.24.24-.5.24l.18-2.52 4.58-4.14c.2-.18-.04-.28-.3-.1l-5.67 3.57-2.44-.76c-.53-.17-.54-.53.11-.79l9.53-3.67c.44-.16.83.11.68.83z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold text-gray-800">Telegram</span>
+                            <span class="text-[10px] text-gray-400 mt-0.5">Chat Directo</span>
+                        </a>
+
+                        <!-- GitHub -->
+                        <a href="https://github.com/programmersforeveryone11-blip" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-gray-300 transition-all text-center group">
+                            <div class="w-12 h-12 rounded-xl bg-gray-900 flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold text-gray-800">GitHub</span>
+                            <span class="text-[10px] text-gray-400 mt-0.5">@programmersforeveryone11-blip</span>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/luizabeths_studios/" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-pink-200 transition-all text-center group">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold text-gray-800">Instagram</span>
+                            <span class="text-[10px] text-gray-400 mt-0.5">@luizabeths_studios</span>
+                        </a>
+
+                        <!-- TikTok -->
+                        <a href="https://www.tiktok.com/@luizabeths_studios" target="_blank" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-cyan-200 transition-all text-center group">
+                            <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12.525.01c1.31 0 2.5.43 3.47 1.13.04-.15.08-.3.12-.45h2.15v2.24c-.67-.01-1.33-.11-1.97-.31a4.93 4.93 0 01-3.13-2.58l-.04.14v7.7c0 2.56-2.07 4.63-4.63 4.63a4.63 4.63 0 01-4.63-4.63c0-2.56 2.07-4.63 4.63-4.63.42 0 .83.06 1.22.17V1.7c-.4-.06-.8-.09-1.22-.09a7.35 7.35 0 00-7.35 7.35 7.35 0 007.35 7.35 7.35 0 007.35-7.35V2.32c1.23.95 2.76 1.52 4.43 1.52v-2.1c-1.23 0-2.35-.45-3.23-1.2-.28-.24-.52-.51-.73-.81z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold text-gray-800">TikTok</span>
+                            <span class="text-[10px] text-gray-400 mt-0.5">@luizabeths_studios</span>
+                        </a>
+
+                        <!-- YouTube (Simulado no disponible) -->
+                        <button onclick="showToast('El canal de YouTube de Luizabeth aún no está habilitado al público. ¡Muy pronto! 🎥')" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-red-200 transition-all text-center group cursor-pointer focus:outline-none">
+                            <div class="w-12 h-12 rounded-xl bg-red-600 flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.871.507 9.388.507 9.388.507s7.517 0 9.388-.507a3.003 3.003 0 00-2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold text-gray-800">YouTube</span>
+                            <span class="text-[10px] text-gray-400 mt-0.5">No Habilitado</span>
+                        </button>
+
+                        <!-- Upwork (Simulado no disponible) -->
+                        <button onclick="showToast('La cuenta de Upwork de Luizabeth aún no está habilitada. ¡Próximamente! 💼')" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-green-200 transition-all text-center group cursor-pointer focus:outline-none">
+                            <div class="w-12 h-12 rounded-xl bg-[#14a800] flex items-center justify-center text-white mb-2 shadow-xs group-hover:scale-105 transition-transform">
+                                <span class="font-bold text-lg">up</span>
+                            </div>
+                            <span class="text-xs font-bold text-gray-800">Upwork</span>
+                            <span class="text-[10px] text-gray-400 mt-0.5">No Habilitado</span>
+                        </button>
+
                         <!-- Gmail -->
-                        <a href="mailto:tu-correo@gmail.com" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-red-150 transition-all text-center group">
+                        <a href="mailto:luizabethsstudios@gmail.com" class="flex flex-col items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-xs hover:shadow-md hover:border-red-150 transition-all text-center group">
                             <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center text-red-600 mb-2 shadow-xs group-hover:scale-105 transition-transform">
                                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-1.29 1.454-2.032 2.514-1.302L12 10.74l9.486-7.585c1.06-.729 2.514.013 2.514 1.302z"/>
@@ -966,7 +1051,7 @@
                     </div>
                 </div>
 
-                <!-- SECCIÓN PERSONALIZADA "ABOUT ME" -->
+                <!-- SECCIÓN PERSONALIZADA "ABOUT ME" (Con foto real de Luizabeth) -->
                 <div class="mt-12 bg-checkerboard rounded-3xl p-6 sm:p-10 relative overflow-hidden shadow-inner border border-pink-100 flex flex-col md:flex-row gap-8 items-center">
                     
                     <!-- Retro Graphic Big Header -->
@@ -976,9 +1061,9 @@
 
                     <!-- Left side: Photobox with border shadow containing custom user image -->
                     <div class="w-[240px] h-[300px] shrink-0 bg-white p-4 pb-12 rounded-xl shadow-xl rotate-1 hover:rotate-0 transition-transform duration-300 z-10 border border-gray-200">
-                        <div class="w-full h-[220px] bg-indigo-50 rounded-lg overflow-hidden flex items-center justify-center relative shadow-inner">
-                            <!-- Tu imagen real que colocarás en la misma carpeta de tu proyecto -->
-                            <img src="remove_light.png.jpg" alt="Luizabeth Contreras" class="w-full h-full object-cover">
+                        <div class="w-full h-[220px] bg-indigo-50 rounded-lg overflow-hidden flex items-center justify-center relative shadow-inner border border-gray-100">
+                            <!-- Foto Real cargada de Luizabeth Contreras -->
+                            <img src="Untitled.png" alt="Luizabeth Contreras" class="w-full h-full object-cover">
                         </div>
                         <div class="mt-3.5 text-center">
                             <span class="font-bold text-gray-700 text-sm tracking-wide font-mono">LUIZABETH</span>
@@ -1045,7 +1130,7 @@
                 <div class="mt-12 border-t border-gray-100 pt-8">
                     <h3 class="text-lg font-medium text-gray-900 mb-6 flex items-center gap-2">
                         <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.871.507 9.388.507 9.388.507s7.517 0 9.388-.507a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            <path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.871.507 9.388.507 9.388.507s7.517 0 9.388-.507a3.003 3.003 0 00-2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                         </svg>
                         Videos Recientes (Mi Blog Personal en YouTube)
                     </h3>
@@ -1210,7 +1295,7 @@
                                 </div>
                                 <h4 class="font-bold text-gray-800 text-base leading-tight mb-2 group-hover/card:text-blue-600 transition-colors">4. Soporte y Web "No-Code"</h4>
                                 <p class="text-xs text-gray-500 leading-relaxed font-light mb-4">
-                                    Soporte técnico, mantenimiento y estructuración de sitios ágiles en plataformas modernas como WordPress, Webflow y Shopify para soluciones prontas.
+                                    Soporte técnico, mantenimiento y estructuración de sitios ágiles en plataformas modernas como WordPress, Webflow and Shopify para soluciones prontas.
                                 </p>
                             </div>
                             <button onclick="showToast('Solicitando información sobre Soporte Técnico...')" class="mt-4 bg-gray-50 hover:bg-blue-600 hover:text-white text-xs text-blue-600 font-semibold py-2 px-4 rounded-xl transition-all self-start">
@@ -1411,16 +1496,133 @@
             `,
             'ProcesodeTrabajo': `
                 <div class="group mb-4">
-                    <span class="text-xs text-gray-500">https://luizabeth.dev &gt; proceso &gt; hoja-de-calculo</span>
+                    <span class="text-xs text-gray-500">https://luizabeth.dev &gt; proceso &gt; diagrama-creacion</span>
                     <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-4">
-                        <a href="#" onclick="showToast('Abriendo hoja de procesos...'); return false;">Diagrama de Control de Procesos de Luizabeth (Simulador de Excel)</a>
+                        <a href="#" onclick="toggleProcessView('diagram'); return false;">Mi Proceso de Trabajo: Cómo Creo una Web desde Cero 🗺️</a>
                     </h3>
                     <p class="text-[14px] google-dark-gray leading-relaxed font-light mb-6">
-                        Para asegurar la máxima transparencia, utilizo esta hoja de cálculo integrada donde detallo la distribución de horas reales estimadas y estados para mis flujos de Python, Freelance y Bolsa:
+                        Descubre mi flujo de trabajo interactivo paso a paso. Desde la planificación inicial asistida por IA hasta la publicación final en servidores en la nube:
                     </p>
+                </div>
 
-                    <!-- HOJA DE EXCEL EMBEDDED DENTRO DEL GOOGLE CLONE -->
-                    <div class="bg-white rounded-xl shadow-md border border-slate-300 overflow-hidden flex flex-col my-6 select-none max-w-full text-slate-800">
+                <!-- TABS PARA ALTERNAR VISTAS -->
+                <div class="flex space-x-2 mb-6 bg-gray-100 p-1 rounded-xl max-w-sm select-none">
+                    <button id="btn-view-diagram" onclick="toggleProcessView('diagram')" class="flex-grow py-2 px-3 rounded-lg text-xs font-bold transition-all bg-white text-blue-600 shadow-xs">
+                        🗺️ Diagrama de Flujo
+                    </button>
+                    <button id="btn-view-excel" onclick="toggleProcessView('excel')" class="flex-grow py-2 px-3 rounded-lg text-xs font-bold transition-all text-gray-600 hover:text-gray-900">
+                        📊 Simulador Excel
+                    </button>
+                </div>
+
+                <!-- CONTENEDOR 1: DIAGRAMA DE FLUJO INTERACTIVO -->
+                <div id="process-diagram-container" class="space-y-6">
+                    <div class="grid grid-cols-1 gap-4 relative">
+                        
+                        <!-- Paso 1 -->
+                        <div onclick="selectDiagramStep(1)" id="diagram-step-1" class="md:col-span-12 flex flex-col md:flex-row items-start gap-4 p-4 rounded-2xl border-2 border-transparent bg-white hover:bg-slate-50 cursor-pointer transition-all shadow-xs group/step">
+                            <div class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-sm shrink-0 shadow-inner group-hover/step:scale-105 transition-transform">
+                                1
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-slate-800 text-base flex items-center gap-2 group-hover/step:text-indigo-600 transition-colors">
+                                    Conceptualización inteligente & IA Copilot <span class="text-xs bg-indigo-100 text-indigo-700 font-semibold px-2 py-0.5 rounded">Fase 1</span>
+                                </h4>
+                                <p class="text-xs text-slate-600 font-light mt-1">Estructuro y conceptualizo la idea del sitio web.</p>
+                                <div id="diagram-detail-1" class="text-xs text-indigo-950 font-light leading-relaxed mt-2.5 pt-2.5 border-t border-indigo-100/50 hidden">
+                                    Aprovecho la potencia de la Inteligencia Artificial como copiloto creativo. Escribo prompts optimizados para estructurar el mapa de navegación, planificar la experiencia del usuario (UX) ideal y definir los objetivos funcionales del software antes de escribir el código.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paso 2 -->
+                        <div onclick="selectDiagramStep(2)" id="diagram-step-2" class="md:col-span-12 flex flex-col md:flex-row items-start gap-4 p-4 rounded-2xl border-2 border-transparent bg-white hover:bg-slate-50 cursor-pointer transition-all shadow-xs group/step">
+                            <div class="w-10 h-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center font-bold text-sm shrink-0 shadow-inner group-hover/step:scale-105 transition-transform">
+                                2
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-slate-800 text-base flex items-center gap-2 group-hover/step:text-pink-600 transition-colors">
+                                    Prototipado Visual en Figma & Canva <span class="text-xs bg-pink-100 text-pink-700 font-semibold px-2 py-0.5 rounded">Fase 2</span>
+                                </h4>
+                                <p class="text-xs text-slate-600 font-light mt-1">Diseño la interfaz de usuario (UI) y paletas aesthetic.</p>
+                                <div id="diagram-detail-2" class="text-xs text-pink-950 font-light leading-relaxed mt-2.5 pt-2.5 border-t border-pink-100/50 hidden">
+                                    Creo la maqueta visual de fidelidad extrema en Figma. Defino paletas de colores personalizadas (como mis fondos retro, cuadriculados y estrellas) y tipografías que transmitan confianza, logrando un diseño visual único y profesional antes de programar.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paso 3 -->
+                        <div onclick="selectDiagramStep(3)" id="diagram-step-3" class="md:col-span-12 flex flex-col md:flex-row items-start gap-4 p-4 rounded-2xl border-2 border-transparent bg-white hover:bg-slate-50 cursor-pointer transition-all shadow-xs group/step">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm shrink-0 shadow-inner group-hover/step:scale-105 transition-transform">
+                                3
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-slate-800 text-base flex items-center gap-2 group-hover/step:text-blue-600 transition-colors">
+                                    Estructuramiento Semántico & Tailwind CSS <span class="text-xs bg-blue-100 text-blue-700 font-semibold px-2 py-0.5 rounded">Fase 3</span>
+                                </h4>
+                                <p class="text-xs text-slate-600 font-light mt-1">Escribo la estructura del sitio y aseguro adaptabilidad móvil.</p>
+                                <div id="diagram-detail-3" class="text-xs text-blue-950 font-light leading-relaxed mt-2.5 pt-2.5 border-t border-blue-100/50 hidden">
+                                    Traduzco los bocetos a código limpio. Utilizo HTML5 semántico para una estructura sólida y Tailwind CSS para estilización atómica ultra-rápida. Mi código garantiza una fluidez absoluta sin píxeles rotos en cualquier pantalla (celulares, tablets o computadoras).
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paso 4 -->
+                        <div onclick="selectDiagramStep(4)" id="diagram-step-4" class="md:col-span-12 flex flex-col md:flex-row items-start gap-4 p-4 rounded-2xl border-2 border-transparent bg-white hover:bg-slate-50 cursor-pointer transition-all shadow-xs group/step">
+                            <div class="w-10 h-10 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center font-bold text-sm shrink-0 shadow-inner group-hover/step:scale-105 transition-transform">
+                                4
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-slate-800 text-base flex items-center gap-2 group-hover/step:text-yellow-600 transition-colors">
+                                    Lógica Interactiva & APIs con JavaScript <span class="text-xs bg-yellow-100 text-yellow-700 font-semibold px-2 py-0.5 rounded">Fase 4</span>
+                                </h4>
+                                <p class="text-xs text-slate-600 font-light mt-1">Añado interactividad, juegos y manipulación de datos en tiempo real.</p>
+                                <div id="diagram-detail-4" class="text-xs text-yellow-950 font-light leading-relaxed mt-2.5 pt-2.5 border-t border-yellow-100/50 hidden">
+                                    Doy vida a la página usando JavaScript moderno (ES6+). Programo la interactividad de las pestañas de búsqueda, sistemas de filtros en tiempo real, mecánicas interactivas de minijuegos e integración de servicios externos de correo.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paso 5 -->
+                        <div onclick="selectDiagramStep(5)" id="diagram-step-5" class="md:col-span-12 flex flex-col md:flex-row items-start gap-4 p-4 rounded-2xl border-2 border-transparent bg-white hover:bg-slate-50 cursor-pointer transition-all shadow-xs group/step">
+                            <div class="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-sm shrink-0 shadow-inner group-hover/step:scale-105 transition-transform">
+                                5
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-slate-800 text-base flex items-center gap-2 group-hover/step:text-purple-600 transition-colors">
+                                    Git & GitHub Codespaces <span class="text-xs bg-purple-100 text-purple-700 font-semibold px-2 py-0.5 rounded">Fase 5</span>
+                                </h4>
+                                <p class="text-xs text-slate-600 font-light mt-1">Controlo versiones del código en la nube de forma segura.</p>
+                                <div id="diagram-detail-5" class="text-xs text-purple-950 font-light leading-relaxed mt-2.5 pt-2.5 border-t border-purple-100/50 hidden">
+                                    Utilizo GitHub Codespaces para trabajar con un editor en la nube de manera ágil y fluida. Organizo los cambios mediante ramas lógicas de Git y subo commits limpios al repositorio remoto para un control de versiones impecable.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paso 6 -->
+                        <div onclick="selectDiagramStep(6)" id="diagram-step-6" class="md:col-span-12 flex flex-col md:flex-row items-start gap-4 p-4 rounded-2xl border-2 border-transparent bg-white hover:bg-slate-50 cursor-pointer transition-all shadow-xs group/step">
+                            <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm shrink-0 shadow-inner group-hover/step:scale-105 transition-transform">
+                                6
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-slate-800 text-base flex items-center gap-2 group-hover/step:text-emerald-600 transition-colors">
+                                    Despliegue Continuo en Vercel o GitHub Pages <span class="text-xs bg-emerald-100 text-emerald-700 font-semibold px-2 py-0.5 rounded">Fase 6</span>
+                                </h4>
+                                <p class="text-xs text-slate-600 font-light mt-1">Publico la web en vivo para todo el mundo.</p>
+                                <div id="diagram-detail-6" class="text-xs text-emerald-950 font-light leading-relaxed mt-2.5 pt-2.5 border-t border-emerald-100/50 hidden">
+                                    Conecto mi repositorio a Vercel o GitHub Pages para compilar y desplegar la web de forma automática en pocos segundos. Realizo auditorías de optimización para asegurar que cargue de forma instantánea en cualquier parte del mundo.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Detalle de ayuda -->
+                    <p class="text-xs text-slate-400 italic text-center mt-4 select-none">💡 Haz clic en cada fase de mi flujo para ver un desglose detallado de mis técnicas.</p>
+                </div>
+
+                <!-- CONTENEDOR 2: SIMULADOR DE EXCEL (Inicialmente oculto) -->
+                <div id="process-excel-container" class="hidden">
+                    <div class="bg-white rounded-xl shadow-md border border-slate-300 overflow-hidden flex flex-col select-none max-w-full text-slate-800">
                         <!-- Barra superior de Excel (Título del archivo) -->
                         <div class="bg-emerald-800 text-white px-4 py-2 flex items-center justify-between text-xs font-medium">
                             <div class="flex items-center space-x-2">
@@ -1443,9 +1645,9 @@
 
                             <!-- Estilos texto -->
                             <div class="flex items-center space-x-2 border-r border-slate-300 pr-3">
-                                <button id="bold-btn" class="font-bold hover:text-emerald-600" title="Negrita">N</button>
-                                <button id="italic-btn" class="italic hover:text-emerald-600" title="Cursiva">K</button>
-                                <button id="underline-btn" class="underline hover:text-emerald-600" title="Subrayado">S</button>
+                                <button class="font-bold hover:text-emerald-600" title="Negrita">N</button>
+                                <button class="italic hover:text-emerald-600" title="Cursiva">K</button>
+                                <button class="underline hover:text-emerald-600" title="Subrayado">S</button>
                             </div>
 
                             <!-- f(x) Formula Display -->
@@ -1501,183 +1703,6 @@
                         </div>
                     </div>
                 </div>
-            `,
-            'Blog': `
-                <div class="group mb-8">
-                    <span class="text-xs text-gray-500">https://luizabeth.dev &gt; blog &gt; articulos</span>
-                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-4">
-                        <a href="#" onclick="showToast('Explorando mi Blog...'); return false;">Artículos Destacados, Metas y Recuerdos</a>
-                    </h3>
-
-                    <!-- CARRUSEL DE IMÁGENES INTERACTIVO Y RECUERDOS (ESTILIZADOS) -->
-                    <div class="relative w-full max-w-2xl mx-auto rounded-3xl overflow-hidden border border-slate-200 shadow-lg bg-slate-50 mb-8 select-none">
-                        <!-- Wrapper para los slides -->
-                        <div class="relative w-full overflow-hidden aspect-[16/10]">
-                            
-                            <!-- Slide 1: Cumpleaños Pastel Amarillo y Lila (Inspirado en la imagen) -->
-                            <div id="carousel-slide-0" class="carousel-slide absolute inset-0 bg-[#fff8b8] flex flex-col justify-between p-6 sm:p-10 transition-opacity duration-500">
-                                <!-- Estrellas decorativas lilas (SVG recreado) -->
-                                <div class="absolute inset-0 opacity-45 pointer-events-none">
-                                    <svg class="w-full h-full" viewBox="0 0 100 100">
-                                        <polygon points="12,5 14,9 18,10 15,13 16,17 12,15 8,17 9,13 6,10 10,9" fill="#aa88ff"/>
-                                        <polygon points="85,12 87,16 91,17 88,20 89,24 85,22 81,24 82,20 79,17 83,16" fill="#aa88ff"/>
-                                        <polygon points="20,70 23,76 30,77 25,81 26,87 20,84 14,87 15,81 10,77 17,76" fill="#aa88ff"/>
-                                        <polygon points="75,75 77,79 81,80 78,83 79,87 75,85 71,87 72,83 69,80 73,79" fill="#aa88ff"/>
-                                    </svg>
-                                </div>
-                                
-                                <div class="flex justify-between items-center z-10 text-slate-800 font-bold text-xs uppercase tracking-widest">
-                                    <span>Enero 16</span>
-                                    <span>2025</span>
-                                </div>
-
-                                <div class="text-center z-10 flex flex-col items-center my-auto space-y-4">
-                                    <!-- TODAY'S Badge Oval -->
-                                    <div class="bg-[#9966ff] text-white font-extrabold text-2xl sm:text-4xl px-8 py-2.5 rounded-full shadow-md tracking-wider border-2 border-white">
-                                        TODAY'S
-                                    </div>
-                                    <!-- MY BIRTHDAY! Banner -->
-                                    <div class="bg-[#9966ff]/20 text-[#8833ff] border-2 border-[#9966ff]/40 font-extrabold text-sm sm:text-lg px-6 py-1.5 rounded-md uppercase tracking-widest">
-                                        ★ MY BIRTHDAY! ★
-                                    </div>
-                                    <div class="pt-2 text-[#9966ff] font-extrabold text-lg sm:text-2xl tracking-wide uppercase drop-shadow-xs">
-                                        🥳 Luizabeth celebra sus 15 años 💗
-                                    </div>
-                                </div>
-
-                                <div class="text-center text-[10px] text-slate-500 font-semibold tracking-widest uppercase z-10">
-                                    Luizabeth's Personal Blog
-                                </div>
-                            </div>
-
-                            <!-- Slide 2: Lógica de Programación (Fondo Oscuro con código) -->
-                            <div id="carousel-slide-1" class="carousel-slide absolute inset-0 bg-slate-900 flex flex-col justify-between p-6 sm:p-10 transition-opacity duration-500 hidden">
-                                <div class="flex justify-between items-center text-slate-500 font-mono text-[10px]">
-                                    <span>python_learning.py</span>
-                                    <span>MODO: EXPERTO</span>
-                                </div>
-                                <div class="my-auto font-mono text-left space-y-2 text-xs text-emerald-400 pl-4 border-l-2 border-emerald-500">
-                                    <span class="text-slate-500"># Creando cosas a partir de un código</span><br>
-                                    <span>class Desarrolladora:</span><br>
-                                    <span class="pl-4">def __init__(self, nombre, edad):</span><br>
-                                    <span class="pl-8">self.nombre = "Luizabeth"</span><br>
-                                    <span class="pl-8">self.edad = 15</span><br>
-                                    <span class="pl-8">self.pasion = "Crear soluciones con código"</span>
-                                </div>
-                                <div class="text-center text-[10px] text-slate-500 font-mono tracking-widest uppercase">
-                                    SKILIO CERTIFIED DEVELOPMENT
-                                </div>
-                            </div>
-
-                            <!-- Slide 3: Diseño UI/UX Creativo (Fondo Pastel con Paletas) -->
-                            <div id="carousel-slide-2" class="carousel-slide absolute inset-0 bg-[#fff5f5] flex flex-col justify-between p-6 sm:p-10 transition-opacity duration-500 hidden">
-                                <div class="flex justify-between items-center text-pink-600 font-bold text-xs uppercase tracking-widest">
-                                    <span>Creative Portfolio</span>
-                                    <span>UI/UX & Figma</span>
-                                </div>
-                                <div class="text-center my-auto flex flex-col items-center space-y-4">
-                                    <span class="text-poster text-3xl sm:text-4xl text-pink-600 leading-none">Magia & Interfaces</span>
-                                    <p class="text-slate-600 text-xs sm:text-sm font-light max-w-md">
-                                        "Diseñar es como hacer magia. Elegimos los colores perfectos, acomodamos los elementos y logramos que todo sea hermoso y accesible para todos."
-                                    </p>
-                                    <div class="flex space-x-1.5">
-                                        <span class="w-4 h-4 rounded-full bg-yellow-300 border border-yellow-400"></span>
-                                        <span class="w-4 h-4 rounded-full bg-pink-400 border border-pink-500"></span>
-                                        <span class="w-4 h-4 rounded-full bg-purple-400 border border-purple-500"></span>
-                                        <span class="w-4 h-4 rounded-full bg-emerald-400 border border-emerald-500"></span>
-                                    </div>
-                                </div>
-                                <div class="text-center text-[10px] text-pink-400 font-semibold tracking-widest uppercase">
-                                    LUY DESIGN LAB
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Botones de Control del Carrusel -->
-                        <button onclick="changeCarouselSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-slate-800 p-2.5 rounded-full shadow border border-slate-200 transition-all focus:outline-none" title="Anterior">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
-                            </svg>
-                        </button>
-                        <button onclick="changeCarouselSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-slate-800 p-2.5 rounded-full shadow border border-slate-200 transition-all focus:outline-none" title="Siguiente">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-                            </svg>
-                        </button>
-                    </div>
-
-                    <!-- SECCIÓN DE LISTAS: METAS ALCANZADAS Y SUEÑOS FUTUROS -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-                        
-                        <!-- Lista de Metas Alcanzadas (🏆) -->
-                        <div class="bg-emerald-50/50 border border-emerald-100 rounded-3xl p-6 sm:p-8">
-                            <h4 class="text-base font-bold text-emerald-800 mb-4 flex items-center gap-2">
-                                <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-                                Metas Alcanzadas (Mis Logros 🏆)
-                            </h4>
-                            <ul class="space-y-3.5 text-xs sm:text-sm text-slate-700 leading-relaxed font-light">
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-emerald-500 font-bold">✓</span>
-                                    <span><strong>Aprender Python desde cero:</strong> Completar con éxito mi formación inicial y comprender la lógica de código.</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-emerald-500 font-bold">✓</span>
-                                    <span><strong>Certificarme en Skilio:</strong> Obtener avales profesionales en Python, Freelance y Bolsa de Valores bajo la tutela de Adrián Sáenz.</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-emerald-500 font-bold">✓</span>
-                                    <span><strong>Crear mi propio Portfolio interactivo:</strong> Diseñar de punta a punta este ecosistema interactivo a mis 15 años.</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-emerald-500 font-bold">✓</span>
-                                    <span><strong>Adoptar Inteligencia Artificial:</strong> Integrar herramientas de IA para impulsar mi velocidad y expandir mis capacidades de desarrollo.</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Lista de Deseos Futuros (🌟) -->
-                        <div class="bg-purple-50/50 border border-purple-100 rounded-3xl p-6 sm:p-8">
-                            <h4 class="text-base font-bold text-purple-800 mb-4 flex items-center gap-2">
-                                <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.9 1.519-.9 1.818 0l1.248 3.805a1 1 0 00.95.69h4.015c.969 0 1.371 1.24.588 1.81l-3.247 2.47a1 1 0 00-.363 1.118l1.248 3.805c.3.9-.755 1.69-1.54 1.11l-3.247-2.47a1 1 0 00-1.118 0l-3.247 2.47c-.785.58-1.541-.21-1.54-1.11l1.248-3.805a1 1 0 00-.363-1.118l-3.247-2.47c-.783-.57-.38-1.81.588-1.81h4.014a1 1 0 00.951-.69l1.248-3.805z"/>
-                                </svg>
-                                Lista de Deseos (Sueños Futuros 🌟)
-                            </h4>
-                            <ul class="space-y-3.5 text-xs sm:text-sm text-slate-700 leading-relaxed font-light">
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-purple-500 font-bold">★</span>
-                                    <span><strong>Cumplir 18 años y lanzar un SaaS:</strong> Diseñar y programar mi propia herramienta web comercial completamente autónoma.</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-purple-500 font-bold">★</span>
-                                    <span><strong>Llegar a más personas:</strong> Crecer mi blog personal y compartir tutoriales divertidos de código en TikTok y YouTube.</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-purple-500 font-bold">★</span>
-                                    <span><strong>Dominar React Native:</strong> Aprender desarrollo nativo móvil para crear aplicaciones de alta fidelidad para Android e iOS.</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-purple-500 font-bold">★</span>
-                                    <span><strong>Viajar trabajando:</strong> Lograr la independencia freelance para llevar mi computadora y programar desde cualquier rincón del mundo.</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="group">
-                    <span class="text-xs text-gray-500">Publicado: 28 de Abril, 2026</span>
-                    <h3 class="text-[20px] google-blue google-blue-hover leading-tight font-medium mb-1">
-                        <a href="#" onclick="showToast('Leyendo: La psicología del color...'); return false;">La psicología del color en el diseño de interfaces moderno</a>
-                    </h3>
-                    <p class="text-[14px] google-dark-gray leading-relaxed font-light">
-                        Un análisis sobre cómo los esquemas de color de marcas líderes como Google guían el comportamiento del usuario y mejoran la legibilidad visual de los textos.
-                    </p>
-                </div>
             `
         };
 
@@ -1701,6 +1726,230 @@
             ]
         };
 
+        // --- SISTEMA INTERACTIVO DE JUEGOS ---
+
+        // Configuración y datos del juego de adivinar libros
+        const bookQuestions = [
+            {
+                clue: "Un joven descubre que es un semidiós, hijo de Poseidón, y emprende un viaje para recuperar el rayo maestro de Zeus.",
+                options: ["Harry Potter", "Percy Jackson y el ladrón del rayo", "Las Crónicas de Narnia", "Los Juegos del Hambre"],
+                correct: "Percy Jackson y el ladrón del rayo"
+            },
+            {
+                clue: "Un niño huérfano descubre en su undécimo cumpleaños que es mago y es invitado a asistir al colegio Hogwarts de Magia y Hechicería.",
+                options: ["Matilda", "El Señor de los Anillos", "Harry Potter y la piedra filosofal", "Crepúsculo"],
+                correct: "Harry Potter y la piedra filosofal"
+            },
+            {
+                clue: "Un pequeño habitante de un asteroide viaja por el universo y aprende sobre el valor de la amistad, el amor y lo esencial que es invisible a los ojos.",
+                options: ["El Principito", "Peter Pan", "Alicia en el país de las maravillas", "El maravilloso mago de Oz"],
+                correct: "El Principito"
+            },
+            {
+                clue: "Cuatro hermanos entran a través de un ropero mágico a un mundo invernal eterno gobernado por una malvada bruja blanca.",
+                options: ["El Hobbit", "Las Crónicas de Narnia: El león, la bruja y el ropero", "Charlie y la fábrica de chocolate", "Peter Pan"],
+                correct: "Las Crónicas de Narnia: El león, la bruja y el ropero"
+            },
+            {
+                clue: "Un ingenioso hidalgo de La Mancha enloquece de tanto leer novelas de caballerías y sale a buscar aventuras junto a su escudero Sancho Panza.",
+                options: ["La Odisea", "Romeo y Julieta", "Moby Dick", "Don Quijote de la Mancha"],
+                correct: "Don Quijote de la Mancha"
+            }
+        ];
+
+        // Configuración y datos del juego de adivinar artistas musicales
+        const musicQuestions = [
+            {
+                clue: "Artista famosísima por sus múltiples eras musicales, letras narrativas profundas y éxitos globales masivos como 'Love Story', 'Blank Space' y 'Shake It Off'.",
+                options: ["Ariana Grande", "Katy Perry", "Taylor Swift", "Billie Eilish"],
+                correct: "Taylor Swift"
+            },
+            {
+                clue: "Banda británica famosa por llenar estadios con pulseras interactivas de colores y canciones icónicas como 'Yellow', 'Viva la Vida' y 'A Sky Full of Stars'.",
+                options: ["Coldplay", "Imagine Dragons", "One Direction", "Maroon 5"],
+                correct: "Coldplay"
+            },
+            {
+                clue: "Cantautor británico pelirrojo conocido por sus baladas acústicas ultrapopulares como 'Thinking Out Loud', 'Perfect' y su gran éxito bailable 'Shape of You'.",
+                options: ["Shawn Mendes", "Ed Sheeran", "Harry Styles", "Bruno Mars"],
+                correct: "Ed Sheeran"
+            },
+            {
+                clue: "Joven artista estadounidense ganadora del Grammy que saltó al estrellato con su balada 'Drivers License' y su álbum debut pop-punk 'SOUR'.",
+                options: ["Olivia Rodrigo", "Billie Eilish", "Sabrina Carpenter", "Dua Lipa"],
+                correct: "Olivia Rodrigo"
+            },
+            {
+                clue: "Artista de estilo misterioso y voz suave que grabó éxitos como 'Bad Guy', 'Ocean Eyes' y la conmovedora balada de Barbie 'What Was I Made For?'.",
+                options: ["Billie Eilish", "Lorde", "Lana Del Rey", "Halsey"],
+                correct: "Billie Eilish"
+            }
+        ];
+
+        // Estado de sesión de los juegos
+        let bookGameState = { score: 0, currentRound: 0 };
+        let musicGameState = { score: 0, currentRound: 0 };
+
+        // Inicializador del juego de libros
+        function initBookGame() {
+            const clueEl = document.getElementById('book-clue');
+            const optionsEl = document.getElementById('book-options');
+            const scoreEl = document.getElementById('book-score');
+            const roundEl = document.getElementById('book-round');
+            const feedbackEl = document.getElementById('book-feedback');
+
+            if (!clueEl || !optionsEl || !scoreEl || !roundEl) return;
+
+            // Comprobar si ya terminamos la ronda de 5 preguntas
+            if (bookGameState.currentRound >= bookQuestions.length) {
+                clueEl.innerHTML = `🏆 ¡Juego completado!<br>Tu puntuación final es de <strong>${bookGameState.score} / 5</strong>`;
+                optionsEl.innerHTML = `
+                    <button onclick="resetBookGame()" class="w-full col-span-2 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold tracking-wide transition-all shadow-sm">
+                        ¿Jugar de nuevo? 🔄
+                    </button>
+                `;
+                roundEl.textContent = "Completado";
+                return;
+            }
+
+            const current = bookQuestions[bookGameState.currentRound];
+            clueEl.textContent = current.clue;
+            scoreEl.textContent = bookGameState.score;
+            roundEl.textContent = `${bookGameState.currentRound + 1}/5`;
+            if (feedbackEl) feedbackEl.textContent = "";
+
+            optionsEl.innerHTML = "";
+            current.options.forEach(option => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-3.5 border border-slate-200 rounded-xl hover:bg-indigo-50 hover:border-indigo-300 transition-all text-xs sm:text-sm text-slate-800 font-medium focus:outline-none";
+                btn.textContent = option;
+                btn.onclick = () => selectBookOption(option, btn);
+                optionsEl.appendChild(btn);
+            });
+        }
+
+        // Evaluar selección del juego de libros
+        function selectBookOption(answer, clickedBtn) {
+            const current = bookQuestions[bookGameState.currentRound];
+            const feedbackEl = document.getElementById('book-feedback');
+            const optionsEl = document.getElementById('book-options');
+            if (!feedbackEl || !optionsEl) return;
+
+            // Desactivar todos los botones
+            const buttons = optionsEl.querySelectorAll('button');
+            buttons.forEach(btn => btn.disabled = true);
+
+            if (answer === current.correct) {
+                bookGameState.score++;
+                feedbackEl.textContent = "¡Correcto! 🌟";
+                feedbackEl.className = "text-xs font-bold text-emerald-600";
+                clickedBtn.className = "w-full text-left p-3.5 border border-emerald-500 bg-emerald-50 text-emerald-800 rounded-xl font-bold transition-all";
+            } else {
+                feedbackEl.textContent = "Incorrecto. Inténtalo de nuevo en la siguiente.";
+                feedbackEl.className = "text-xs font-bold text-rose-600";
+                clickedBtn.className = "w-full text-left p-3.5 border border-rose-500 bg-rose-50 text-rose-800 rounded-xl font-bold transition-all";
+                
+                // Resaltar el botón correcto
+                buttons.forEach(btn => {
+                    if (btn.textContent === current.correct) {
+                        btn.className = "w-full text-left p-3.5 border border-emerald-500 bg-emerald-50 text-emerald-800 rounded-xl font-bold transition-all";
+                    }
+                });
+            }
+
+            // Avanzar automáticamente en 2 segundos
+            setTimeout(() => {
+                bookGameState.currentRound++;
+                initBookGame();
+            }, 2200);
+        }
+
+        // Reiniciar el juego de libros
+        function resetBookGame() {
+            bookGameState = { score: 0, currentRound: 0 };
+            initBookGame();
+            showToast('¡Juego de Libros reiniciado! 📚');
+        }
+
+        // Inicializador del juego de música
+        function initMusicGame() {
+            const clueEl = document.getElementById('music-clue');
+            const optionsEl = document.getElementById('music-options');
+            const scoreEl = document.getElementById('music-score');
+            const roundEl = document.getElementById('music-round');
+            const feedbackEl = document.getElementById('music-feedback');
+
+            if (!clueEl || !optionsEl || !scoreEl || !roundEl) return;
+
+            // Comprobar fin de ronda
+            if (musicGameState.currentRound >= musicQuestions.length) {
+                clueEl.innerHTML = `🏆 ¡Juego completado!<br>Tu puntuación final es de <strong>${musicGameState.score} / 5</strong>`;
+                optionsEl.innerHTML = `
+                    <button onclick="resetMusicGame()" class="w-full col-span-2 py-3 bg-yellow-500 hover:bg-yellow-600 text-white rounded-xl font-bold tracking-wide transition-all shadow-sm">
+                        ¿Jugar de nuevo? 🔄
+                    </button>
+                `;
+                roundEl.textContent = "Completado";
+                return;
+            }
+
+            const current = musicQuestions[musicGameState.currentRound];
+            clueEl.textContent = current.clue;
+            scoreEl.textContent = musicGameState.score;
+            roundEl.textContent = `${musicGameState.currentRound + 1}/5`;
+            if (feedbackEl) feedbackEl.textContent = "";
+
+            optionsEl.innerHTML = "";
+            current.options.forEach(option => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-3.5 border border-yellow-200 rounded-xl hover:bg-yellow-50 hover:border-yellow-400 transition-all text-xs sm:text-sm text-yellow-950 font-medium focus:outline-none bg-white/50";
+                btn.textContent = option;
+                btn.onclick = () => selectMusicOption(option, btn);
+                optionsEl.appendChild(btn);
+            });
+        }
+
+        // Evaluar selección del juego de música
+        function selectMusicOption(answer, clickedBtn) {
+            const current = musicQuestions[musicGameState.currentRound];
+            const feedbackEl = document.getElementById('music-feedback');
+            const optionsEl = document.getElementById('music-options');
+            if (!feedbackEl || !optionsEl) return;
+
+            const buttons = optionsEl.querySelectorAll('button');
+            buttons.forEach(btn => btn.disabled = true);
+
+            if (answer === current.correct) {
+                musicGameState.score++;
+                feedbackEl.textContent = "¡Increíble! ¡Acertaste! 🌟";
+                feedbackEl.className = "text-xs font-bold text-emerald-600";
+                clickedBtn.className = "w-full text-left p-3.5 border border-emerald-500 bg-emerald-50 text-emerald-800 rounded-xl font-bold transition-all";
+            } else {
+                feedbackEl.textContent = "¡Upps! No era la respuesta correcta.";
+                feedbackEl.className = "text-xs font-bold text-rose-600";
+                clickedBtn.className = "w-full text-left p-3.5 border border-rose-500 bg-rose-50 text-rose-800 rounded-xl font-bold transition-all";
+                
+                buttons.forEach(btn => {
+                    if (btn.textContent === current.correct) {
+                        btn.className = "w-full text-left p-3.5 border border-emerald-500 bg-emerald-50 text-emerald-800 rounded-xl font-bold transition-all";
+                    }
+                });
+            }
+
+            setTimeout(() => {
+                musicGameState.currentRound++;
+                initMusicGame();
+            }, 2200);
+        }
+
+        // Reiniciar el juego de música
+        function resetMusicGame() {
+            musicGameState = { score: 0, currentRound: 0 };
+            initMusicGame();
+            showToast('¡Juego de Música reiniciado! 🎵');
+        }
+
+        // --- MANEJO EXCEL ESTÁTICO ---
         let currentExcelSheet = 'python';
 
         // Helper to render the excel spreadsheet elements inside the Process tab
@@ -1779,6 +2028,58 @@
             }
         }
 
+        // Alternar vistas en el proceso de trabajo (Diagrama / Excel)
+        function toggleProcessView(view) {
+            const diagContainer = document.getElementById('process-diagram-container');
+            const excelContainer = document.getElementById('process-excel-container');
+            const btnDiag = document.getElementById('btn-view-diagram');
+            const btnExcel = document.getElementById('btn-view-excel');
+
+            if (!diagContainer || !excelContainer || !btnDiag || !btnExcel) return;
+
+            if (view === 'diagram') {
+                diagContainer.classList.remove('hidden');
+                excelContainer.classList.add('hidden');
+                btnDiag.className = "flex-grow py-2 px-3 rounded-lg text-xs font-bold transition-all bg-white text-blue-600 shadow-xs";
+                btnExcel.className = "flex-grow py-2 px-3 rounded-lg text-xs font-bold transition-all text-gray-600 hover:text-gray-900";
+                selectDiagramStep(1); // Auto resaltar fase 1
+            } else {
+                diagContainer.classList.add('hidden');
+                excelContainer.classList.remove('hidden');
+                btnExcel.className = "flex-grow py-2 px-3 rounded-lg text-xs font-bold transition-all bg-white text-blue-600 shadow-xs";
+                btnDiag.className = "flex-grow py-2 px-3 rounded-lg text-xs font-bold transition-all text-gray-600 hover:text-gray-900";
+                renderExcelSimulator();
+            }
+        }
+
+        // Selección de fases en el diagrama de flujo interactivo
+        function selectDiagramStep(stepNum) {
+            for (let i = 1; i <= 6; i++) {
+                const detail = document.getElementById('diagram-detail-' + i);
+                const stepCard = document.getElementById('diagram-step-' + i);
+                if (detail && stepCard) {
+                    if (i === stepNum) {
+                        const isHidden = detail.classList.contains('hidden');
+                        if (isHidden) {
+                            detail.classList.remove('hidden');
+                            if (i === 1) stepCard.className = "md:col-span-12 flex flex-col md:flex-row items-start gap-4 p-4 rounded-2xl border-2 border-indigo-500 bg-indigo-50/20 cursor-pointer transition-all shadow-xs group/step";
+                            if (i === 2) stepCard.className = "md:col-span-12 flex flex-col md:flex-row items-start gap-4 p-4 rounded-2xl border-2 border-pink-500 bg-pink-50/20 cursor-pointer transition-all shadow-xs group/step";
+                            if (i === 3) stepCard.className = "md:col-span-12 flex flex-col md:flex-row items-start gap-4 p-4 rounded-2xl border-2 border-blue-500 bg-blue-50/20 cursor-pointer transition-all shadow-xs group/step";
+                            if (i === 4) stepCard.className = "md:col-span-12 flex flex-col md:flex-row items-start gap-4 p-4 rounded-2xl border-2 border-yellow-500 bg-yellow-50/20 cursor-pointer transition-all shadow-xs group/step";
+                            if (i === 5) stepCard.className = "md:col-span-12 flex flex-col md:flex-row items-start gap-4 p-4 rounded-2xl border-2 border-purple-500 bg-purple-50/20 cursor-pointer transition-all shadow-xs group/step";
+                            if (i === 6) stepCard.className = "md:col-span-12 flex flex-col md:flex-row items-start gap-4 p-4 rounded-2xl border-2 border-emerald-500 bg-emerald-50/20 cursor-pointer transition-all shadow-xs group/step";
+                        } else {
+                            detail.classList.add('hidden');
+                            stepCard.className = "md:col-span-12 flex flex-col md:flex-row items-start gap-4 p-4 rounded-2xl border-2 border-transparent bg-white hover:bg-slate-50 cursor-pointer transition-all shadow-xs group/step";
+                        }
+                    } else {
+                        detail.classList.add('hidden');
+                        stepCard.className = "md:col-span-12 flex flex-col md:flex-row items-start gap-4 p-4 rounded-2xl border-2 border-transparent bg-white hover:bg-slate-50 cursor-pointer transition-all shadow-xs group/step";
+                    }
+                }
+            }
+        }
+
         // Active tab states
         let currentTab = 'Todo';
 
@@ -1802,9 +2103,17 @@
                 relatedSection.style.display = 'none';
             }
 
-            // If we navigated to Work Processes, initialize Excel render immediately
+            // Si navegamos a Proyectos, inicializamos los dos juegos interactivos
+            if (currentTab === 'Proyectos') {
+                initBookGame();
+                initMusicGame();
+            }
+
+            // Si navegamos a Proceso de Trabajo, inicializamos el primer paso del diagrama
             if (currentTab === 'ProcesodeTrabajo') {
-                renderExcelSimulator();
+                setTimeout(() => {
+                    selectDiagramStep(1);
+                }, 50);
             }
 
             // If we navigated to Blog, initialize Carousel
@@ -1928,10 +2237,21 @@
             }, 3000);
         }
 
-        // Contact simulated submission handler
+        // Contact simulated submission handler (Sends actual email via local Mail client redirection)
         function submitFormSimulated(event) {
             event.preventDefault();
-            showToast('¡Tu propuesta de negocio ha sido registrada con éxito! 🎉');
+            const inputs = event.target.querySelectorAll('input, textarea');
+            const name = inputs[0].value;
+            const email = inputs[1].value;
+            const msg = inputs[2].value;
+
+            // Create subject and email body pre-populated for secure redirection
+            const subject = encodeURIComponent(`Contacto Portfolio - Propuesta de ${name}`);
+            const body = encodeURIComponent(`Hola Luizabeth,\n\nHas recibido un nuevo mensaje desde tu Portfolio de Búsqueda:\n\nNombre: ${name}\nCorreo de contacto: ${email}\n\nMensaje:\n${msg}\n\n---\nEnviado desde el Ecosistema Digital de Luizabeth Contreras.`);
+            
+            window.location.href = `mailto:luizabethsstudios@gmail.com?subject=${subject}&body=${body}`;
+            
+            showToast('¡Abriendo tu aplicación de correo para enviar mensaje directo! ✉️');
             event.target.reset();
         }
 
